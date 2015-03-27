@@ -6,6 +6,7 @@ import mediators.ToolBarMediator;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
+import javax.swing.JToggleButton;
 import javax.swing.JToolBar;
 import java.awt.Color;
 import java.awt.Cursor;
@@ -33,15 +34,19 @@ public class NewMenuListener implements ActionListener {
         newPanel = new JPanel();
         newPanel.setLayout(null);
 
-        newPanel.addMouseListener(new BoxDrawingListener(newPanel, jtbMain));
+        JToggleButton currentMode = (JToggleButton)jtbMain.getComponentAtIndex(0);//&&&&&
+        if (currentMode.isSelected()){
+            newPanel.addMouseListener(new BoxDrawingListener(newPanel, jtbMain));
+        }
+
         newPanel.setBackground(Color.white);
 
-        JScrollPane jScroll = new JScrollPane(newPanel);
-        jScroll.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
-        jScroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+        //JScrollPane jScroll = new JScrollPane(newPanel);
+        //jScroll.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
+        //jScroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
 
-        jtpVkladka.add("No name", jScroll);
-        jtpVkladka.setSelectedComponent(jScroll);
+        jtpVkladka.add("No name", newPanel);
+        jtpVkladka.setSelectedComponent(newPanel);
 
         jtbMain.setVisible(true);
     }

@@ -2,6 +2,10 @@ package model;
 
 import listeners.NewMenuListener;
 import listeners.ToolBarListener;
+import listeners.modeListeners.ChangeIdentifierMode;
+import listeners.modeListeners.CreateEdgeMode;
+import listeners.modeListeners.CreateMoveVertexMode;
+import listeners.modeListeners.DeleteMode;
 import mediators.ToolBarMediator;
 
 import javax.swing.*;
@@ -125,7 +129,7 @@ public class MainWindow {
         ImageIcon imChanges = new ImageIcon("image\\toolbar\\181.png");
         ImageIcon imDelete = new ImageIcon("image\\toolbar\\181.png");
 
-        JToggleButton jbtVertex = new JToggleButton(imVertex,true);
+        JToggleButton jbtVertex = new JToggleButton(imVertex,false);
         jbtVertex.setActionCommand("Vertex");
         JToggleButton jbtEdge = new JToggleButton(imEdge,false);
         jbtEdge.setActionCommand("Edge");
@@ -153,11 +157,11 @@ public class MainWindow {
         jmiCreate.addActionListener(nmlListener);
 
         //Создание слушателя для кнопок панели инструментов
-        ToolBarListener toolBarListener = new ToolBarListener(jtbMain,jtpVkladka);
-        jbtVertex.addActionListener(toolBarListener);
-        jbtEdge.addActionListener(toolBarListener);
-        jbtChanges.addActionListener(toolBarListener);
-        jbtDelete.addActionListener(toolBarListener);
+
+        jbtVertex.addActionListener(new CreateMoveVertexMode(jtpVkladka,jtbMain));
+        jbtEdge.addActionListener(new CreateEdgeMode(jtpVkladka,jtbMain));
+        jbtChanges.addActionListener(new ChangeIdentifierMode(jtpVkladka,jtbMain));
+        jbtDelete.addActionListener(new DeleteMode(jtpVkladka,jtbMain));
 
         jfMainWin.setVisible(true);
     }

@@ -1,6 +1,8 @@
 package listeners;
 
-import mediators.ToolBarMediator;
+import listeners.createMoveVertexListeners.ClickVertexListener;
+import listeners.createMoveVertexListeners.MoveVertexListener;
+import model.Vertex;
 import myConstants.ImageConst;
 import myConstants.NumericConst;
 
@@ -24,87 +26,43 @@ public class BoxDrawingListener implements MouseListener {
 
     public void mouseClicked(MouseEvent me) {
         if (me.getClickCount() == 2 && me.getButton() == me.BUTTON1) {
+            try {
+                String nameVertex = "";
 
-            if (ToolBarMediator.getNumberSelectedButton() == 0) {
+                Vertex vertex = new Vertex(ImageConst.GREY_VERTEX_IMAGE,new JLabel(nameVertex));
+                vertex.addMouseMotionListener(new MoveVertexListener(vertex,boxDrawing));
+                vertex.addMouseListener(new ClickVertexListener(vertex));
 
-                try {
-                    String nameVertex = "";
+                boxDrawing.add(vertex);
+                boxDrawing.add(vertex.getIdentifier());
 
-                    JLabel jlVertex = new JLabel(ImageConst.GREY_VERTEX_IMAGE);
-                    JLabel jlIdtf = new JLabel(nameVertex);
-
-                    ClickedMoveVertexListener clmListener = new ClickedMoveVertexListener(jlVertex, jlIdtf, boxDrawing);
-
-                    jlVertex.addMouseMotionListener(clmListener);
-                    jlVertex.addMouseListener(clmListener);
-                    jlIdtf.addMouseMotionListener(clmListener);
-                    jlIdtf.addMouseListener(clmListener);
-
-                    boxDrawing.add(jlVertex);
-                    boxDrawing.add(jlIdtf);
-
-                    jlVertex.setBounds(me.getX(), me.getY(), NumericConst.VERTEX_SIZE_X, NumericConst.VERTEX_SIZE_Y);
-                    jlIdtf.setBounds(me.getX() + NumericConst.VERTEX_SIZE_X,
+                vertex.setBounds(me.getX(), me.getY(), NumericConst.VERTEX_SIZE_X, NumericConst.VERTEX_SIZE_Y);
+                vertex.getIdentifier().setBounds(me.getX() + NumericConst.VERTEX_SIZE_X,
                             me.getY() + NumericConst.VERTEX_SIZE_Y - 4,
                             NumericConst.FONT_SIZE * nameVertex.length(), NumericConst.FONT_SIZE);
 
-                    boxDrawing.repaint();
-                } catch (Exception error) {
-
-                }
+                boxDrawing.repaint();
+            } catch (Exception error) {
+                System.out.println("in BoxDrawingListener");
             }
         }
     }
 
     @Override
     public void mousePressed(MouseEvent me) {
-        /*if (me.getClickCount()==1){
-            ImageIcon imVertex = new ImageIcon("image\\toolbar\\181.png");
-            JLabel jlBuf = new JLabel(imVertex);
-            boxDrawing.add(jlBuf);
-
-            jlBuf.setLocation(me.getX(),me.getY());
-
-            System.out.print(2);
-        }*/
     }
 
     @Override
     public void mouseReleased(MouseEvent me) {
-       /* if (me.getClickCount()==1){
-            ImageIcon imVertex = new ImageIcon("image\\toolbar\\181.png");
-            JLabel jlBuf = new JLabel(imVertex);
-            boxDrawing.add(jlBuf);
-
-            jlBuf.setLocation(me.getX(),me.getY());
-
-            System.out.print(3);
-        }*/
     }
 
     @Override
     public void mouseEntered(MouseEvent me) {
-      /*  if (me.getClickCount()==1){
-            ImageIcon imVertex = new ImageIcon("image\\toolbar\\181.png");
-            JLabel jlBuf = new JLabel(imVertex);
-            boxDrawing.add(jlBuf);
 
-            jlBuf.setLocation(me.getX(),me.getY());
-
-            System.out.print(4);
-        }*/
     }
 
     @Override
     public void mouseExited(MouseEvent me) {
-       /* if (me.getClickCount()==1){
-            ImageIcon imVertex = new ImageIcon("image\\toolbar\\181.png");
-            JLabel jlBuf = new JLabel(imVertex);
-            boxDrawing.add(jlBuf);
 
-            jlBuf.setLocation(me.getX(),me.getY());
-
-            System.out.print(5);
-        }*/
     }
 }
