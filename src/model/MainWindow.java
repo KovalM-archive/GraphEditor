@@ -1,12 +1,10 @@
 package model;
 
 import listeners.NewMenuListener;
-import listeners.ToolBarListener;
-import listeners.modeListeners.ChangeIdentifierMode;
-import listeners.modeListeners.CreateEdgeMode;
-import listeners.modeListeners.CreateMoveVertexMode;
-import listeners.modeListeners.DeleteMode;
-import mediators.ToolBarMediator;
+import listeners.modeListeners.ChangeIdentifierModeListener;
+import listeners.modeListeners.CreateEdgeModeListener;
+import listeners.modeListeners.CreateMoveVertexModeListener;
+import listeners.modeListeners.DeleteModeListener;
 
 import javax.swing.*;
 import javax.swing.plaf.nimbus.NimbusLookAndFeel;
@@ -131,6 +129,7 @@ public class MainWindow {
 
         JToggleButton jbtVertex = new JToggleButton(imVertex,false);
         jbtVertex.setActionCommand("Vertex");
+        jbtVertex.setSelected(true);
         JToggleButton jbtEdge = new JToggleButton(imEdge,false);
         jbtEdge.setActionCommand("Edge");
         JToggleButton jbtChanges = new JToggleButton(imChanges,false);
@@ -143,7 +142,6 @@ public class MainWindow {
         jtbMain.add(jbtChanges);
         jtbMain.add(jbtDelete);
 
-        ToolBarMediator.setToolBarMediator(jtbMain);
         jtbMain.setFloatable(false);
         jtbMain.setVisible(false);
 
@@ -158,10 +156,10 @@ public class MainWindow {
 
         //Создание слушателя для кнопок панели инструментов
 
-        jbtVertex.addActionListener(new CreateMoveVertexMode(jtpVkladka,jtbMain));
-        jbtEdge.addActionListener(new CreateEdgeMode(jtpVkladka,jtbMain));
-        jbtChanges.addActionListener(new ChangeIdentifierMode(jtpVkladka,jtbMain));
-        jbtDelete.addActionListener(new DeleteMode(jtpVkladka,jtbMain));
+        jbtVertex.addActionListener(new CreateMoveVertexModeListener(jtpVkladka,jtbMain));
+        jbtEdge.addActionListener(new CreateEdgeModeListener(jtpVkladka,jtbMain));
+        jbtChanges.addActionListener(new ChangeIdentifierModeListener(jtpVkladka,jtbMain));
+        jbtDelete.addActionListener(new DeleteModeListener(jtpVkladka,jtbMain));
 
         jfMainWin.setVisible(true);
     }

@@ -1,29 +1,28 @@
-package listeners.deleteObjectListeners;
+package listeners.modeListeners;
 
 import model.Vertex;
+import myConstants.ImageConst;
 
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 /**
- * Created by Михаил on 26.03.2015.
+ * Created by Михаил on 25.03.2015.
  */
-public class DeleteVertexListener implements MouseListener {
-    Vertex vertex;
+public class ClickVertexListener implements MouseListener {
+    private Vertex vertex;
 
-    public DeleteVertexListener(Vertex vertexCopy){
+    public ClickVertexListener(Vertex vertexCopy){
         vertex = vertexCopy;
     }
 
     @Override
     public void mouseClicked(MouseEvent e) {
-        vertex.setVisible(false);
-        vertex.getIdentifier().setVisible(false);
+
     }
 
     @Override
     public void mousePressed(MouseEvent e) {
-
     }
 
     @Override
@@ -33,11 +32,13 @@ public class DeleteVertexListener implements MouseListener {
 
     @Override
     public void mouseEntered(MouseEvent e) {
-
+        vertex.setIcon(ImageConst.GREEN_VERTEX_IMAGE);
+        vertex.updateUI();
     }
 
     @Override
     public void mouseExited(MouseEvent e) {
-
+        vertex.setIcon(ImageConst.GREY_VERTEX_IMAGE);
+        vertex.updateUI();
     }
 }

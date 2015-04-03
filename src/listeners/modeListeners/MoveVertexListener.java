@@ -1,6 +1,7 @@
-package listeners.createMoveVertexListeners;
+package listeners.modeListeners;
 
 import model.Vertex;
+import model.WorkingArea;
 import myConstants.ImageConst;
 
 import javax.swing.JPanel;
@@ -12,11 +13,11 @@ import java.awt.event.MouseMotionListener;
  * Created by Михаил on 25.03.2015.
  */
 public class MoveVertexListener implements MouseMotionListener {
-    Vertex vertex;
-    JPanel boxDrawing;
-    Point mouseOnBoxDrawing;
+    private Vertex vertex;
+    private WorkingArea boxDrawing;
+    private Point mouseOnBoxDrawing;
 
-    public MoveVertexListener(Vertex vertexCopy,JPanel boxDrawingCopy){
+    public MoveVertexListener(Vertex vertexCopy,WorkingArea boxDrawingCopy){
         vertex = vertexCopy;
         boxDrawing = boxDrawingCopy;
     }

@@ -1,12 +1,9 @@
 package listeners.modeListeners;
 
-import listeners.changeIdentifierListeners.ChangeVertexName;
-import listeners.deleteObjectListeners.DeleteVertexListener;
 import model.Vertex;
+import model.WorkingArea;
 
-import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
-import javax.swing.JToggleButton;
 import javax.swing.JToolBar;
 import java.awt.Cursor;
 import java.awt.event.MouseListener;
@@ -15,28 +12,18 @@ import java.awt.event.MouseMotionListener;
 /**
  * Created by Михаил on 24.03.2015.
  */
-public class DeleteMode extends ModeListener{
+public class DeleteModeListener extends ModeListener{
 
-    public DeleteMode(JTabbedPane jtpVkladkaCopy,JToolBar jtbMainCopy){
+    public DeleteModeListener(JTabbedPane jtpVkladkaCopy, JToolBar jtbMainCopy){
         super(jtpVkladkaCopy,jtbMainCopy);
     }
 
     @Override
     protected void changeMode() {
-        JToggleButton currentButton;
-
-        if (CURRENT_MODE != -1) {
-            currentButton = (JToggleButton) jtbMain.getComponentAtIndex(CURRENT_MODE);
-            currentButton.setSelected(false);
-        }
-
-        currentButton = (JToggleButton) jtbMain.getComponentAtIndex(DELETE_MODE);
-        currentButton.setSelected(true);
-
         int numberPanel = jtpVkladka.getComponentCount();
         for (int i = 0; i < numberPanel; i++) {
             //JScrollPane scroll = (JScrollPane)jtpVkladka.getComponentAt(i);
-            JPanel currentPanel = (JPanel)jtpVkladka.getComponentAt(i);
+            WorkingArea currentPanel = (WorkingArea)jtpVkladka.getComponentAt(i);
 
             int numberLabel = currentPanel.getComponentCount();
 
@@ -70,6 +57,5 @@ public class DeleteMode extends ModeListener{
 
             currentPanel.setCursor(Cursor.getPredefinedCursor(Cursor.N_RESIZE_CURSOR));
         }
-        CURRENT_MODE = DELETE_MODE;
     }
 }

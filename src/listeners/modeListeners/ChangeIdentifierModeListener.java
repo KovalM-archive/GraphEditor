@@ -1,15 +1,9 @@
 package listeners.modeListeners;
 
-import listeners.BoxDrawingListener;
-import listeners.createEdgeListeners.CreateEdgeListener;
 import model.Vertex;
-import myConstants.ImageConst;
+import model.WorkingArea;
 
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
-import javax.swing.JToggleButton;
 import javax.swing.JToolBar;
 import java.awt.Cursor;
 import java.awt.event.MouseListener;
@@ -18,29 +12,19 @@ import java.awt.event.MouseMotionListener;
 /**
  * Created by Михаил on 24.03.2015.
  */
-public class CreateEdgeMode extends ModeListener {
+public class ChangeIdentifierModeListener extends ModeListener {
 
-    public CreateEdgeMode(JTabbedPane jtpVkladkaCopy,JToolBar jtbMainCopy){
+    public ChangeIdentifierModeListener(JTabbedPane jtpVkladkaCopy, JToolBar jtbMainCopy){
         super(jtpVkladkaCopy,jtbMainCopy);
     }
 
     @Override
     protected void changeMode() {
-        JToggleButton currentButton;
-
-        if (CURRENT_MODE != -1) {
-            currentButton = (JToggleButton) jtbMain.getComponentAtIndex(CURRENT_MODE);
-            currentButton.setSelected(false);
-        }
-
-        currentButton = (JToggleButton) jtbMain.getComponentAtIndex(CREATE_EDGE_MODE);
-        currentButton.setSelected(true);
 
         int numberPanel = jtpVkladka.getComponentCount();
-
         for (int i = 0; i < numberPanel; i++) {
             //JScrollPane scroll = (JScrollPane)jtpVkladka.getComponentAt(i);
-            JPanel currentPanel = (JPanel)jtpVkladka.getComponentAt(i);
+            WorkingArea currentPanel = (WorkingArea)jtpVkladka.getComponentAt(i);
 
             int numberLabel = currentPanel.getComponentCount();
 
@@ -59,11 +43,11 @@ public class CreateEdgeMode extends ModeListener {
                     for (MouseMotionListener currentListener : currentLabelMotionListeners) {
                         currentVertex.removeMouseMotionListener(currentListener);
                     }
-                    currentVertex.addMouseListener(new CreateEdgeListener(currentVertex));
+                    currentVertex.addMouseListener(new ChangeVertexName(currentVertex));
+
                 } catch (Exception error){
                     System.out.println("No vertex");
                 }
-
             }
 
             MouseListener currentPanelListeners[] = currentPanel.getMouseListeners();
@@ -71,9 +55,8 @@ public class CreateEdgeMode extends ModeListener {
             for (MouseListener currentListener : currentPanelListeners){
                 currentPanel.removeMouseListener(currentListener);
             }
-            currentPanel.setCursor(Cursor.getPredefinedCursor(Cursor.MOVE_CURSOR));
-        }
-        CURRENT_MODE = CREATE_EDGE_MODE;
-    }
 
+            currentPanel.setCursor(Cursor.getPredefinedCursor(Cursor.E_RESIZE_CURSOR));
+        }
+    }
 }

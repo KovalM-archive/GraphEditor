@@ -1,6 +1,7 @@
 package listeners.modeListeners;
 
 import javax.swing.JTabbedPane;
+import javax.swing.JToggleButton;
 import javax.swing.JToolBar;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -9,12 +10,6 @@ import java.awt.event.ActionListener;
  * Created by Михаил on 24.03.2015.
  */
 public abstract class ModeListener implements ActionListener {
-
-    protected  final int CREATE_MOVE_VERTEX_MODE = 0;
-    protected  final int CREATE_EDGE_MODE = 1;
-    protected  final int CHANGE_IDENTIFIER_MODE = 2;
-    protected  final int DELETE_MODE = 3;
-    protected static int CURRENT_MODE = -1;
 
     protected JTabbedPane jtpVkladka;
     protected JToolBar jtbMain;
@@ -26,6 +21,17 @@ public abstract class ModeListener implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        JToggleButton currentButton;
+
+        for (int i=0; i<4; i++){
+            currentButton = (JToggleButton) jtbMain.getComponentAtIndex(i);
+            if (e.getActionCommand().equals(currentButton.getActionCommand())){
+                currentButton.setSelected(true);
+            }else{
+                currentButton.setSelected(false);
+            }
+        }
+
         changeMode();
     }
 

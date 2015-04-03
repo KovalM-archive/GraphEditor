@@ -1,4 +1,4 @@
-package listeners.changeIdentifierListeners;
+package listeners.modeListeners;
 
 import model.Vertex;
 import myConstants.NumericConst;
@@ -11,7 +11,7 @@ import java.awt.event.MouseListener;
  * Created by Михаил on 25.03.2015.
  */
 public class ChangeVertexName implements MouseListener {
-    Vertex vertex;
+    private Vertex vertex;
 
     public ChangeVertexName(Vertex vertexCopy){
         vertex = vertexCopy;

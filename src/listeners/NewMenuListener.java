@@ -1,15 +1,12 @@
 package listeners;
 
-import mediators.CursorScin;
-import mediators.ToolBarMediator;
+import model.WorkingArea;
 
 import javax.swing.JPanel;
-import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
 import javax.swing.JToggleButton;
 import javax.swing.JToolBar;
 import java.awt.Color;
-import java.awt.Cursor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -18,9 +15,9 @@ import java.awt.event.ActionListener;
  */
 public class NewMenuListener implements ActionListener {
 
-    JToolBar jtbMain;
-    JTabbedPane jtpVkladka;
-    JPanel newPanel;
+    private JToolBar jtbMain;
+    private JTabbedPane jtpVkladka;
+    private WorkingArea newPanel;
 
     public NewMenuListener(JTabbedPane jtpVkladkaCopy, JToolBar jtbMainCopy) {
 
@@ -31,7 +28,7 @@ public class NewMenuListener implements ActionListener {
     public void actionPerformed(ActionEvent ae) {
         //Scanner scan = new Scanner(System.in);
         //String c = scan.nextLine();
-        newPanel = new JPanel();
+        newPanel = new WorkingArea();
         newPanel.setLayout(null);
 
         JToggleButton currentMode = (JToggleButton)jtbMain.getComponentAtIndex(0);//&&&&&

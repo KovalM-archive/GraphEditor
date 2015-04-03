@@ -1,4 +1,4 @@
-package listeners.createEdgeListeners;
+package listeners.modeListeners;
 
 import model.Vertex;
 
@@ -6,17 +6,19 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 /**
- * Created by Михаил on 27.03.2015.
+ * Created by Михаил on 26.03.2015.
  */
-public class CreateEdgeListener implements MouseListener {
-    Vertex vertex;
+public class DeleteVertexListener implements MouseListener {
+    private Vertex vertex;
 
-    public CreateEdgeListener(Vertex vertexCopy){
+    public DeleteVertexListener(Vertex vertexCopy){
         vertex = vertexCopy;
     }
 
     @Override
     public void mouseClicked(MouseEvent e) {
+        vertex.setVisible(false);
+        vertex.getIdentifier().setVisible(false);
     }
 
     @Override

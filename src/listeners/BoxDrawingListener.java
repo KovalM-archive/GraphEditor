@@ -1,8 +1,9 @@
 package listeners;
 
-import listeners.createMoveVertexListeners.ClickVertexListener;
-import listeners.createMoveVertexListeners.MoveVertexListener;
+import listeners.modeListeners.ClickVertexListener;
+import listeners.modeListeners.MoveVertexListener;
 import model.Vertex;
+import model.WorkingArea;
 import myConstants.ImageConst;
 import myConstants.NumericConst;
 
@@ -15,10 +16,10 @@ import java.awt.event.MouseListener;
  */
 public class BoxDrawingListener implements MouseListener {
 
-    JPanel boxDrawing;
-    JToolBar jtbMain;
+    private WorkingArea boxDrawing;
+    private JToolBar jtbMain;
 
-    public BoxDrawingListener(JPanel boxDrawingCopy, JToolBar jtbMainCopy) {
+    public BoxDrawingListener(WorkingArea boxDrawingCopy, JToolBar jtbMainCopy) {
 
         boxDrawing = boxDrawingCopy;
         jtbMain = jtbMainCopy;
