@@ -1,7 +1,8 @@
 package listeners.modeListeners;
 
 import model.Vertex;
-import myConstants.NumericConst;
+import myConstants.ImageConst;
+import myConstants.VertexConst;
 
 import javax.swing.JOptionPane;
 import java.awt.event.MouseEvent;
@@ -31,8 +32,8 @@ public class ChangeVertexName implements MouseListener {
         vertex.getIdentifier().setBounds(
                 vertex.getIdentifier().getX(),
                 vertex.getIdentifier().getY(),
-                NumericConst.FONT_SIZE * newNameVertex.length(),
-                NumericConst.FONT_SIZE);
+                VertexConst.FONT_SIZE * newNameVertex.length(),
+                VertexConst.FONT_SIZE);
 
         vertex.getIdentifier().setText(newNameVertex);
         vertex.getIdentifier().updateUI();
@@ -50,11 +51,13 @@ public class ChangeVertexName implements MouseListener {
 
     @Override
     public void mouseEntered(MouseEvent e) {
-
+        vertex.setIcon(ImageConst.GREEN_VERTEX_IMAGE);
+        vertex.updateUI();
     }
 
     @Override
     public void mouseExited(MouseEvent e) {
-
+        vertex.setIcon(ImageConst.GREY_VERTEX_IMAGE);
+        vertex.updateUI();
     }
 }

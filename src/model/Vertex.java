@@ -2,6 +2,7 @@ package model;
 
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,6 +15,7 @@ public class Vertex extends JLabel{
 
     public Vertex(ImageIcon imageVertex,JLabel identifierCopy){
         super(imageVertex);
+        this.setBackground(new Color(255,255,255,0));
         setIdentifier(identifierCopy);
     }
 

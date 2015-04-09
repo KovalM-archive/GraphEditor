@@ -1,6 +1,7 @@
 package model;
 
-import com.sun.prism.BasicStroke;
+import java.awt.BasicStroke;
+import myConstants.EdgeConst;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -18,6 +19,9 @@ public class Edge extends JPanel {
     private Vertex start = null;
     private Vertex finish = null;
     private boolean isCreate = false;
+    private boolean greenColor = false;
+    private int currenDirection = 1;
+
     JPanel buffer;
 
     public Edge(JLabel identifierCopy) {
@@ -27,14 +31,27 @@ public class Edge extends JPanel {
     public void paintComponent(Graphics g){
         super.paintComponent(g);
         Graphics2D g2d = (Graphics2D)g;
-        //g2d.clearRect(0,0,this.getWidth(),this.getHeight());
+        g2d.setStroke(new BasicStroke(2));
         g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-        g2d.drawLine(0, 0, this.getWidth(), this.getHeight());
-        g2d.drawLine(this.getWidth(),this.getHeight(),this.getWidth()-10,this.getHeight()-20);
-        g2d.drawLine(this.getWidth(),this.getHeight(),this.getWidth()-20,this.getHeight()-10);
+
+        if (greenColor) {
+            g2d.setColor(Color.GREEN);
+        } else {
+            g2d.setColor(Color.BLACK);
+        }
+
+        if (currenDirection == EdgeConst.DIRECTION_SOUTH_EAST){
+            g2d.drawLine(0, 0, this.getWidth(), this.getHeight());
+
+        } else if (currenDirection == EdgeConst.DIRECTION_SOUTH_WEST){
+            g2d.drawLine(this.getWidth(), 0, 0, this.getHeight());
+        } else if (currenDirection == EdgeConst.DIRECTION_NORTH_WEST){
+            g2d.drawLine(this.getWidth(),this.getHeight(),0,0);
+        } else {
+            g2d.drawLine(0, this.getHeight(),this.getWidth(),0);
+        }
+
         this.setBackground(new Color(255,255,255,0));
-        g2d.setClip(null);
-       // g2d.drawLine(0,0,this.getWidth(),this.getHeight());
     }
 
     public void setIdentifier(JLabel identifierCopy){
@@ -67,5 +84,21 @@ public class Edge extends JPanel {
 
     public void setCreate(boolean isCreate) {
         this.isCreate = isCreate;
+    }
+
+    public int getCurrenDirection() {
+        return currenDirection;
+    }
+
+    public void setCurrenDirection(int currenDirection) {
+        this.currenDirection = currenDirection;
+    }
+
+    public boolean getGreenColor() {
+        return greenColor;
+    }
+
+    public void setGreenColor(boolean greenColor) {
+        this.greenColor = greenColor;
     }
 }

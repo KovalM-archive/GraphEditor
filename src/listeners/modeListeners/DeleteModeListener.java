@@ -1,5 +1,6 @@
 package listeners.modeListeners;
 
+import model.Edge;
 import model.Vertex;
 import model.WorkingArea;
 
@@ -43,9 +44,27 @@ public class DeleteModeListener extends ModeListener{
                         currentVertex.removeMouseMotionListener(currentListener);
                     }
                     currentVertex.addMouseListener(new DeleteVertexListener(currentVertex));
-
                 } catch (Exception error){
-                    System.out.println("No vertex");
+                    try {
+                        Edge currentEdge = (Edge) currentPanel.getComponent(j);
+
+                        MouseListener currentLabelListeners[] = currentEdge.getMouseListeners();
+
+                        for (MouseListener currentListener : currentLabelListeners) {
+                            currentEdge.removeMouseListener(currentListener);
+                        }
+
+                        MouseMotionListener currentLabelMotionListeners[] = currentEdge.getMouseMotionListeners();
+
+                        for (MouseMotionListener currentListener : currentLabelMotionListeners) {
+                            currentEdge.removeMouseMotionListener(currentListener);
+                        }
+
+                        currentEdge.addMouseMotionListener(new DeleteEdgeListener(currentEdge,currentPanel));
+                        System.out.println("No vertex");
+                    } catch (Exception err){
+                        System.out.println("No edge");
+                    }
                 }
             }
 
@@ -55,7 +74,7 @@ public class DeleteModeListener extends ModeListener{
                 currentPanel.removeMouseListener(currentListener);
             }
 
-            currentPanel.setCursor(Cursor.getPredefinedCursor(Cursor.N_RESIZE_CURSOR));
+            currentPanel.setCursor(Cursor.getDefaultCursor());
         }
     }
 }

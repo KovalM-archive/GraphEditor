@@ -1,11 +1,16 @@
 package listeners.modeListeners;
 
+import model.Vertex;
 import model.WorkingArea;
+import myConstants.EdgeConst;
+import myConstants.VertexConst;
 
 import javax.swing.JPanel;
 import java.awt.Point;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionListener;
+
+import static java.lang.Math.abs;
 
 /**
  * Created by Михаил on 31.03.2015.
@@ -25,16 +30,32 @@ public class PaintEdgeListener implements MouseMotionListener {
 
     @Override
     public void mouseMoved(MouseEvent e) {
-        if (boxDrawing.getCurrenEdge() != null && !boxDrawing.getCurrenEdge().isCreate()){
+        if (boxDrawing.getCurrenEdge() != null) {
+            int x1 = boxDrawing.getCurrenEdge().getStart().getX() + VertexConst.VERTEX_SIZE_X / 2;
+            int y1 = boxDrawing.getCurrenEdge().getStart().getY() + VertexConst.VERTEX_SIZE_Y / 2;
             mousePos = boxDrawing.getMousePosition();
-            boxDrawing.getCurrenEdge().setBounds(18+boxDrawing.getCurrenEdge().getStart().getX(),
-                    18 + boxDrawing.getCurrenEdge().getStart().getY(),
-                    (int)mousePos.getX() - boxDrawing.getCurrenEdge().getStart().getX()-18,
-                    (int)mousePos.getY() - boxDrawing.getCurrenEdge().getStart().getY()-18);
+            int x2 = (int) mousePos.getX();
+            int y2 = (int) mousePos.getY();
+
+            if (x1 <= x2 && y1 <= y2) {
+                boxDrawing.getCurrenEdge().setBounds(x1, y1,
+                                                        abs(x1 - x2), abs(y1 - y2));
+                boxDrawing.getCurrenEdge().setCurrenDirection(EdgeConst.DIRECTION_SOUTH_EAST);
+            } else if (x1 >= x2 && y1 <= y2) {
+                boxDrawing.getCurrenEdge().setBounds(x2, y1,
+                                                        abs(x1 - x2), abs(y1 - y2));
+                boxDrawing.getCurrenEdge().setCurrenDirection(EdgeConst.DIRECTION_SOUTH_WEST);
+            } else if (x1 >= x2 && y1 >= y2) {
+                boxDrawing.getCurrenEdge().setBounds(x2, y2, abs(x1 - x2), abs(y1 - y2));
+                boxDrawing.getCurrenEdge().setCurrenDirection(EdgeConst.DIRECTION_NORTH_WEST);
+            } else {
+                boxDrawing.getCurrenEdge().setBounds(x1, y2,
+                                                        abs(x1 - x2), abs(y1 - y2));
+                boxDrawing.getCurrenEdge().setCurrenDirection(EdgeConst.DIRECTION_NORTH_EAST);
+            }
 
             boxDrawing.repaint();
-            boxDrawing.getCurrenEdge().repaint();
-
+           // boxDrawing.getCurrenEdge().repaint();
         }
     }
 }

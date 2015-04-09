@@ -44,7 +44,6 @@ public class ChangeIdentifierModeListener extends ModeListener {
                         currentVertex.removeMouseMotionListener(currentListener);
                     }
                     currentVertex.addMouseListener(new ChangeVertexName(currentVertex));
-
                 } catch (Exception error){
                     System.out.println("No vertex");
                 }

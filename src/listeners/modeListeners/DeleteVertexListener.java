@@ -1,6 +1,7 @@
 package listeners.modeListeners;
 
 import model.Vertex;
+import myConstants.ImageConst;
 
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -33,11 +34,13 @@ public class DeleteVertexListener implements MouseListener {
 
     @Override
     public void mouseEntered(MouseEvent e) {
-
+        vertex.setIcon(ImageConst.GREEN_VERTEX_IMAGE);
+        vertex.updateUI();
     }
 
     @Override
     public void mouseExited(MouseEvent e) {
-
+        vertex.setIcon(ImageConst.GREY_VERTEX_IMAGE);
+        vertex.updateUI();
     }
 }

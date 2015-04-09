@@ -5,7 +5,7 @@ import listeners.modeListeners.MoveVertexListener;
 import model.Vertex;
 import model.WorkingArea;
 import myConstants.ImageConst;
-import myConstants.NumericConst;
+import myConstants.VertexConst;
 
 import javax.swing.*;
 import java.awt.event.MouseEvent;
@@ -37,10 +37,10 @@ public class BoxDrawingListener implements MouseListener {
                 boxDrawing.add(vertex);
                 boxDrawing.add(vertex.getIdentifier());
 
-                vertex.setBounds(me.getX(), me.getY(), NumericConst.VERTEX_SIZE_X, NumericConst.VERTEX_SIZE_Y);
-                vertex.getIdentifier().setBounds(me.getX() + NumericConst.VERTEX_SIZE_X,
-                            me.getY() + NumericConst.VERTEX_SIZE_Y - 4,
-                            NumericConst.FONT_SIZE * nameVertex.length(), NumericConst.FONT_SIZE);
+                vertex.setBounds(me.getX(), me.getY(), VertexConst.VERTEX_SIZE_X, VertexConst.VERTEX_SIZE_Y);
+                vertex.getIdentifier().setBounds(me.getX() + VertexConst.VERTEX_SIZE_X,
+                            me.getY() + VertexConst.VERTEX_SIZE_Y - 4,
+                            VertexConst.FONT_SIZE * nameVertex.length(), VertexConst.FONT_SIZE);
 
                 boxDrawing.repaint();
             } catch (Exception error) {
