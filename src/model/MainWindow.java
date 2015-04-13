@@ -151,6 +151,9 @@ public class MainWindow {
         JTabbedPane jtpVkladka = new JTabbedPane(JTabbedPane.TOP,JTabbedPane.WRAP_TAB_LAYOUT);
         jfMainWin.add(jtpVkladka, BorderLayout.CENTER);
 
+        //jfMainWin.setBackground(Color.blue);
+        //jtpVkladka.setBackground(Color.cyan);
+
         NewMenuListener nmlListener = new NewMenuListener(jtpVkladka,jtbMain);
         jmiCreate.addActionListener(nmlListener);
 

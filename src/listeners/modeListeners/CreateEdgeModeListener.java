@@ -56,6 +56,14 @@ public class CreateEdgeModeListener extends ModeListener {
             for (MouseListener currentListener : currentPanelListeners){
                 currentPanel.removeMouseListener(currentListener);
             }
+
+            MouseMotionListener currentPanelMotionListeners[] = currentPanel.getMouseMotionListeners();
+
+            for (MouseMotionListener currentListener : currentPanelMotionListeners){
+                currentPanel.removeMouseMotionListener(currentListener);
+            }
+
+            currentPanel.addMouseMotionListener(new PaintEdgeListener(currentPanel));
             currentPanel.setCursor(Cursor.getDefaultCursor());
         }
     }

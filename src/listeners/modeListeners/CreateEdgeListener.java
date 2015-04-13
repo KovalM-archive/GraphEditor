@@ -8,8 +8,7 @@ import myConstants.ImageConst;
 import myConstants.VertexConst;
 
 import javax.swing.JLabel;
-import java.awt.Graphics;
-import java.awt.Point;
+import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
@@ -31,40 +30,32 @@ public class CreateEdgeListener implements MouseListener {
     public void mouseClicked(MouseEvent e) {
         if (boxDrawing.getCurrenEdge() == null){
             Edge newEdge = new Edge(new JLabel(""));
+
             newEdge.setStart(vertex);
-            newEdge.setDoubleBuffered(true);
+
             boxDrawing.setCurrenEdge(newEdge);
             boxDrawing.getCurrenEdge().setCreate(false);
-            boxDrawing.add(boxDrawing.getCurrenEdge());
+            boxDrawing.add(boxDrawing.getCurrenEdge().getIdentifier());
         } else{
             boxDrawing.getCurrenEdge().setFinish(vertex);
             boxDrawing.getCurrenEdge().setCreate(true);
 
-            int x1 = boxDrawing.getCurrenEdge().getStart().getX();
-            int y1 = boxDrawing.getCurrenEdge().getStart().getY();
-            int x2 = boxDrawing.getCurrenEdge().getFinish().getX();
-            int y2 = boxDrawing.getCurrenEdge().getFinish().getY();
+            int x1 = boxDrawing.getCurrenEdge().getStart().getX() + VertexConst.VERTEX_SIZE_X / 2;
+            int y1 = boxDrawing.getCurrenEdge().getStart().getY() + VertexConst.VERTEX_SIZE_Y / 2;
+            int x2 = boxDrawing.getCurrenEdge().getFinish().getX() + VertexConst.VERTEX_SIZE_X / 2;
+            int y2 = boxDrawing.getCurrenEdge().getFinish().getY() + VertexConst.VERTEX_SIZE_Y / 2;
 
-            if (x1 <= x2 && y1 <= y2) {
-                boxDrawing.getCurrenEdge().setBounds(x1 + VertexConst.VERTEX_SIZE_X / 2, y1 + VertexConst.VERTEX_SIZE_Y / 2,
-                                                        abs(x1 - x2), abs(y1 - y2));
-                boxDrawing.getCurrenEdge().setCurrenDirection(EdgeConst.DIRECTION_SOUTH_EAST);
-            } else if (x1 >= x2 && y1 <= y2) {
-                boxDrawing.getCurrenEdge().setBounds(x2 + VertexConst.VERTEX_SIZE_X / 2, y1 + VertexConst.VERTEX_SIZE_Y / 2,
-                                                        abs(x1 - x2), abs(y1 - y2));
-                boxDrawing.getCurrenEdge().setCurrenDirection(EdgeConst.DIRECTION_SOUTH_WEST);
-            } else if (x1 >= x2 && y1 >= y2) {
-                boxDrawing.getCurrenEdge().setBounds(x2 + VertexConst.VERTEX_SIZE_X / 2, y2 + VertexConst.VERTEX_SIZE_Y / 2,
-                                                        abs(x1 - x2), abs(y1 - y2));
-                boxDrawing.getCurrenEdge().setCurrenDirection(EdgeConst.DIRECTION_NORTH_WEST);
-            } else {
-                boxDrawing.getCurrenEdge().setBounds(x1 + VertexConst.VERTEX_SIZE_X / 2, y2 + VertexConst.VERTEX_SIZE_Y / 2,
-                                                        abs(x1 - x2), abs(y1 - y2));
-                boxDrawing.getCurrenEdge().setCurrenDirection(EdgeConst.DIRECTION_NORTH_EAST);
-            }
+            int x = Math.min(x1, x2) + Math.abs(x1 - x2) / 2;
+            int y = Math.min(y1,y2) + Math.abs(y1-y2) / 2;
 
-            boxDrawing.repaint();
-            boxDrawing.getCurrenEdge().repaint();
+            boxDrawing.drawEdge(boxDrawing.getCurrenEdge());
+
+            boxDrawing.getCurrenEdge().getIdentifier().setBounds(x, y, VertexConst.FONT_SIZE * 4, VertexConst.FONT_SIZE);
+
+            boxDrawing.getCurrenEdge().getStart().addEdge(boxDrawing.getCurrenEdge());
+            boxDrawing.getCurrenEdge().getFinish().addEdge(boxDrawing.getCurrenEdge());
+            boxDrawing.getAllEdges().addEdges(boxDrawing.getCurrenEdge());
+
             boxDrawing.setCurrenEdge(null);
         }
     }

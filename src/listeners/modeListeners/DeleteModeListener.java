@@ -6,8 +6,9 @@ import model.WorkingArea;
 
 import javax.swing.JTabbedPane;
 import javax.swing.JToolBar;
-import java.awt.Cursor;
+import java.awt.*;
 import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionAdapter;
 import java.awt.event.MouseMotionListener;
 
 /**
@@ -43,28 +44,9 @@ public class DeleteModeListener extends ModeListener{
                     for (MouseMotionListener currentListener : currentLabelMotionListeners) {
                         currentVertex.removeMouseMotionListener(currentListener);
                     }
-                    currentVertex.addMouseListener(new DeleteVertexListener(currentVertex));
-                } catch (Exception error){
-                    try {
-                        Edge currentEdge = (Edge) currentPanel.getComponent(j);
-
-                        MouseListener currentLabelListeners[] = currentEdge.getMouseListeners();
-
-                        for (MouseListener currentListener : currentLabelListeners) {
-                            currentEdge.removeMouseListener(currentListener);
-                        }
-
-                        MouseMotionListener currentLabelMotionListeners[] = currentEdge.getMouseMotionListeners();
-
-                        for (MouseMotionListener currentListener : currentLabelMotionListeners) {
-                            currentEdge.removeMouseMotionListener(currentListener);
-                        }
-
-                        currentEdge.addMouseMotionListener(new DeleteEdgeListener(currentEdge,currentPanel));
-                        System.out.println("No vertex");
-                    } catch (Exception err){
-                        System.out.println("No edge");
-                    }
+                    currentVertex.addMouseListener(new DeleteVertexListener(currentVertex,currentPanel));
+                } catch (Exception err) {
+                    System.out.println("No vertex");
                 }
             }
 
@@ -73,6 +55,15 @@ public class DeleteModeListener extends ModeListener{
             for (MouseListener currentListener : currentPanelListeners){
                 currentPanel.removeMouseListener(currentListener);
             }
+
+            MouseMotionListener currentPanelMotionListeners[] = currentPanel.getMouseMotionListeners();
+
+            for (MouseMotionListener currentListener : currentPanelMotionListeners){
+                currentPanel.removeMouseMotionListener(currentListener);
+            }
+
+            currentPanel.addMouseMotionListener(new DeleteEdgeListener(currentPanel));
+            currentPanel.addMouseListener(new DeleteEdgeListener(currentPanel));
 
             currentPanel.setCursor(Cursor.getDefaultCursor());
         }

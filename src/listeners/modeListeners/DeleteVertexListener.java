@@ -1,6 +1,8 @@
 package listeners.modeListeners;
 
+import model.Edge;
 import model.Vertex;
+import model.WorkingArea;
 import myConstants.ImageConst;
 
 import java.awt.event.MouseEvent;
@@ -11,14 +13,30 @@ import java.awt.event.MouseListener;
  */
 public class DeleteVertexListener implements MouseListener {
     private Vertex vertex;
+    private WorkingArea boxDrawning;
 
-    public DeleteVertexListener(Vertex vertexCopy){
+    public DeleteVertexListener(Vertex vertexCopy, WorkingArea boxDrawningCopy){
         vertex = vertexCopy;
+        boxDrawning = boxDrawningCopy;
     }
 
     @Override
     public void mouseClicked(MouseEvent e) {
+        Edge currentEdge;
+
         vertex.setVisible(false);
+
+        int n = vertex.getNumberEdges();
+        while (n>0){
+            currentEdge = vertex.getEdgesOfNumber(n-1);
+            boxDrawning.getAllEdges().removeEdge(currentEdge);
+            currentEdge.getIdentifier().setVisible(false);
+            currentEdge.getStart().removeEdge(currentEdge);
+            currentEdge.getFinish().removeEdge(currentEdge);
+            n--;
+        }
+        boxDrawning.drawVertexsEdges(vertex);
+
         vertex.getIdentifier().setVisible(false);
     }
 

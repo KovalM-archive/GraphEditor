@@ -55,7 +55,16 @@ public class ChangeIdentifierModeListener extends ModeListener {
                 currentPanel.removeMouseListener(currentListener);
             }
 
-            currentPanel.setCursor(Cursor.getPredefinedCursor(Cursor.E_RESIZE_CURSOR));
+            MouseMotionListener currentPanelMotionListeners[] = currentPanel.getMouseMotionListeners();
+
+            for (MouseMotionListener currentListener : currentPanelMotionListeners){
+                currentPanel.removeMouseMotionListener(currentListener);
+            }
+
+            currentPanel.addMouseMotionListener(new ChangeEdgeName(currentPanel));
+            currentPanel.addMouseListener(new ChangeEdgeName(currentPanel));
+
+            currentPanel.setCursor(Cursor.getDefaultCursor());
         }
     }
 }

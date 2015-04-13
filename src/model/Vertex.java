@@ -23,6 +23,10 @@ public class Vertex extends JLabel{
         vertexEdges.add(edge);
     }
 
+    public  void removeEdge(Edge edge){
+        vertexEdges.remove(edge);
+    }
+
     public Edge getEdgesOfNumber(int x){
         if (x >= 0 && x < vertexEdges.size()){
             return vertexEdges.get(x);
@@ -30,6 +34,10 @@ public class Vertex extends JLabel{
         else{
             return null;
         }
+    }
+
+    public int getNumberEdges(){
+        return vertexEdges.size();
     }
 
     public void setIdentifier(JLabel identifierCopy){

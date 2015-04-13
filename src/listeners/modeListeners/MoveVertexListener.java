@@ -31,6 +31,7 @@ public class MoveVertexListener implements MouseMotionListener {
         mouseOnBoxDrawing.setLocation(mouseOnBoxDrawing.getX() + 18, mouseOnBoxDrawing.getY() + 12);
         vertex.getIdentifier().setLocation(mouseOnBoxDrawing);
 
+        boxDrawing.drawVertexsEdges(vertex);
         boxDrawing.repaint();
     }
 

@@ -2,23 +2,22 @@ package listeners.modeListeners;
 
 import model.Edge;
 import model.WorkingArea;
+import myConstants.VertexConst;
 
+import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 
-import static java.lang.StrictMath.abs;
-import static java.lang.StrictMath.toDegrees;
-
 /**
- * Created by Михаил on 06.04.2015.
+ * Created by Михаил on 13.04.2015.
  */
-public class DeleteEdgeListener implements MouseListener,MouseMotionListener {
+public class ChangeEdgeName implements MouseMotionListener,MouseListener {
     private WorkingArea boxDrawing;
     private Edge farEdge;
 
-    public DeleteEdgeListener(WorkingArea boxDrawing){
+    public ChangeEdgeName(WorkingArea boxDrawing){
         this.boxDrawing = boxDrawing;
         farEdge = null;
     }
@@ -26,12 +25,23 @@ public class DeleteEdgeListener implements MouseListener,MouseMotionListener {
     @Override
     public void mouseClicked(MouseEvent e) {
         if (boxDrawing.getGreenEdge() != null){
-            boxDrawing.getGreenEdge().getIdentifier().setVisible(false);
-            boxDrawing.getGreenEdge().getStart().removeEdge(boxDrawing.getGreenEdge());
-            boxDrawing.getGreenEdge().getFinish().removeEdge(boxDrawing.getGreenEdge());
-            boxDrawing.getAllEdges().removeEdge(boxDrawing.getGreenEdge());
-            boxDrawing.drawAllEdge();
-            boxDrawing.setGreenEdge(null);
+            String newNameVertex = "";
+            try {
+                while (newNameVertex.equals("")) {
+                    newNameVertex = JOptionPane.showInputDialog("Enter name of edge:");
+                }
+            } catch (Exception error){
+                newNameVertex = "";
+            }
+
+            boxDrawing.getGreenEdge().getIdentifier().setBounds(
+                    boxDrawing.getGreenEdge().getIdentifier().getX(),
+                    boxDrawing.getGreenEdge().getIdentifier().getY(),
+                    VertexConst.FONT_SIZE * newNameVertex.length(),
+                    VertexConst.FONT_SIZE);
+
+            boxDrawing.getGreenEdge().getIdentifier().setText(newNameVertex);
+            boxDrawing.getGreenEdge().getIdentifier().updateUI();
         }
     }
 
@@ -64,7 +74,7 @@ public class DeleteEdgeListener implements MouseListener,MouseMotionListener {
     public void mouseMoved(MouseEvent e) {
         double xMouse,yMouse,rast,x1,x2,y1,y2;
         double min = 9999999999.0;
-        Edge  currentEdge;
+        Edge currentEdge;
 
         xMouse = boxDrawing.getMousePosition().getX();
         yMouse = boxDrawing.getMousePosition().getY();

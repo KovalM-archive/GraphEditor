@@ -8,6 +8,7 @@ import javax.swing.JTabbedPane;
 import javax.swing.JToolBar;
 import java.awt.Cursor;
 import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
 
 /**
  * Created by Михаил on 24.03.2015.
@@ -43,6 +44,19 @@ public class CreateMoveVertexModeListener extends ModeListener {
                     System.out.println("No vertex");
                 }
             }
+
+            MouseListener currentPanelListeners[] = currentPanel.getMouseListeners();
+
+            for (MouseListener currentListener : currentPanelListeners){
+                currentPanel.removeMouseListener(currentListener);
+            }
+
+            MouseMotionListener currentPanelMotionListeners[] = currentPanel.getMouseMotionListeners();
+
+            for (MouseMotionListener currentListener : currentPanelMotionListeners){
+                currentPanel.removeMouseMotionListener(currentListener);
+            }
+
             currentPanel.addMouseListener(new BoxDrawingListener(currentPanel,jtbMain));
             currentPanel.setCursor(Cursor.getDefaultCursor());
         }

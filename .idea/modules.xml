@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/by.kovalev.ppvis.sem4.grapheditor_v2.0.iml" filepath="$PROJECT_DIR$/by.kovalev.ppvis.sem4.grapheditor_v2.0.iml" />
+      <module fileurl="file://$PROJECT_DIR$/GraphEditor.iml" filepath="$PROJECT_DIR$/GraphEditor.iml" />
     </modules>
   </component>
 </project>
