@@ -1,5 +1,7 @@
 package graphview;
 
+import graph.VertexModel;
+
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import java.awt.Color;
@@ -9,6 +11,7 @@ import java.util.List;
 public class VertexView extends JLabel{
     private JLabel identifier;
     private List<EdgeView> vertexEdges;
+    private VertexModel vertexRoot;
 
     public VertexView(ImageIcon imageVertex, JLabel identifierCopy){
         super(imageVertex);
@@ -44,5 +47,13 @@ public class VertexView extends JLabel{
 
     public JLabel getIdentifier(){
         return identifier;
+    }
+
+    public VertexModel getVertexRoot() {
+        return vertexRoot;
+    }
+
+    public void setVertexRoot(VertexModel vertexRoot) {
+        this.vertexRoot = vertexRoot;
     }
 }

@@ -23,13 +23,31 @@ public class ChangeEdgeName implements MouseMotionListener,MouseListener {
     public void mouseClicked(MouseEvent e) {
         if (boxDrawing.getGreenEdge() != null){
             String newNameVertex = "";
+            boolean flag;
             try {
-                while (newNameVertex.equals("")) {
+                while (true) {
                     newNameVertex = JOptionPane.showInputDialog("Enter name of edge:");
+                    flag = false;
+                    for (int i = 0; i<newNameVertex.length(); i++){
+                        if (!('0' <= newNameVertex.charAt(i) && newNameVertex.charAt(i) <= '9')){
+                            flag = true;
+                            break;
+                        }
+                    }
+                    if (!flag) {
+                        break;
+                    }
                 }
             } catch (Exception error){
                 newNameVertex = "";
             }
+
+            int weight = 0;
+            for (int i=0; i<newNameVertex.length(); i++){
+                weight = weight*10 + (int)newNameVertex.charAt(i)-48;
+            }
+
+            boxDrawing.getGreenEdge().getEdgeRoot().setWeight(weight);
             boxDrawing.getGreenEdge().getIdentifier().setFont(new Font("Verdana",Font.PLAIN,VertexConst.FONT_SIZE));
             boxDrawing.getGreenEdge().getIdentifier().setBounds(
                     boxDrawing.getGreenEdge().getIdentifier().getX(),

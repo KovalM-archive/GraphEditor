@@ -1,5 +1,6 @@
 package mode;
 
+import graph.EdgeModel;
 import graphview.EdgeView;
 import graphview.VertexView;
 import graphview.WorkingArea;
@@ -22,10 +23,17 @@ public class DeleteVertexListener implements MouseListener {
         EdgeView currentEdge;
 
         vertex.setVisible(false);
+        vertex.getIdentifier().setVisible(false);
+
+        boxDrawning.getGraphView().getGraphRoot().removeVertex(vertex.getVertexRoot());
 
         int n = vertex.getNumberEdges();
         while (n>0){
             currentEdge = vertex.getEdgesAtIndex(n - 1);
+            EdgeModel oldEdgeModel = currentEdge.getEdgeRoot();
+            currentEdge.getStart().getVertexRoot().removeEdge(oldEdgeModel);
+            currentEdge.getFinish().getVertexRoot().removeEdge(oldEdgeModel);
+
             boxDrawning.getAllEdges().removeEdge(currentEdge);
             currentEdge.getIdentifier().setVisible(false);
             currentEdge.getStart().removeEdge(currentEdge);
@@ -34,7 +42,8 @@ public class DeleteVertexListener implements MouseListener {
         }
         boxDrawning.drawVertexsEdges(vertex);
 
-        vertex.getIdentifier().setVisible(false);
+        boxDrawning.remove(vertex.getIdentifier());
+        boxDrawning.remove(vertex);
     }
 
     @Override

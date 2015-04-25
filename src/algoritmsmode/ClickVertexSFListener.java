@@ -28,7 +28,7 @@ public class ClickVertexSFListener extends MouseAdapter {
             newEdge = boxDrawing.getCurrentEdge();
             newEdge.setFinish(vertex);
             newEdge.getStart().setIcon(VertexConst.GREY_VERTEX_IMAGE);
-
+            boxDrawing.getGraphView().showMinPath(newEdge.getStart(),newEdge.getFinish());
             boxDrawing.setCurrentEdge(null);
         }
     }

@@ -1,5 +1,6 @@
 package mode;
 
+import graph.VertexModel;
 import graphview.VertexView;
 import graphview.WorkingArea;
 import constants.VertexConst;
@@ -29,9 +30,12 @@ public class CreateVertexListener extends MouseAdapter {
                 vertex.addMouseMotionListener(new MoveVertexListener(vertex,boxDrawing));
                 vertex.addMouseListener(new ClickVertexListener(vertex));
 
+                VertexModel newVertexModel = new VertexModel();
+                vertex.setVertexRoot(newVertexModel);
+                boxDrawing.getGraphView().getGraphRoot().addVertex(newVertexModel);
+
                 boxDrawing.add(vertex);
                 boxDrawing.add(vertex.getIdentifier());
-
                 vertex.setBounds(me.getX(), me.getY(), VertexConst.VERTEX_SIZE_X, VertexConst.VERTEX_SIZE_Y);
                 vertex.getIdentifier().setBounds(me.getX() + VertexConst.VERTEX_SIZE_X,
                             me.getY() + VertexConst.VERTEX_SIZE_Y - 4,

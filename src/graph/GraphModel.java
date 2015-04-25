@@ -1,26 +1,24 @@
 package graph;
 
-import graphview.VertexView;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class GraphModel {
-    private List<VertexView> vertexesGraph;
+    private List<VertexModel> vertexesGraph;
 
     public GraphModel(){
-        vertexesGraph = new ArrayList<VertexView>();
+        vertexesGraph = new ArrayList<VertexModel>();
     }
 
-    public void addVertex(VertexView newVertex){
+    public void addVertex(VertexModel newVertex){
         vertexesGraph.add(newVertex);
     }
 
-    public void removeVertex(VertexView oldVertex){
+    public void removeVertex(VertexModel oldVertex){
         vertexesGraph.remove(oldVertex);
     }
 
-    public VertexView getVertexAtIndex(int x){
+    public VertexModel getVertexAtIndex(int x){
         if (x >= 0 && x < vertexesGraph.size()){
             return vertexesGraph.get(x);
         }
@@ -33,17 +31,28 @@ public class GraphModel {
         return vertexesGraph.size();
     }
 
-    public VertexView getEdgeOfVertexAtIndex(VertexView currentVertex, int x){
-        if (x >= 0 && x < currentVertex.getNumberEdges()){
-            if (currentVertex.equals(currentVertex.getEdgesAtIndex(x).getFinish())) {
-                return currentVertex.getEdgesAtIndex(x).getStart();
-            } else {
-                return currentVertex.getEdgesAtIndex(x).getFinish();
+    public List<VertexModel> findMinPath(VertexModel start,VertexModel finish){
+        List<VertexModel> answer = new ArrayList<VertexModel>();
+
+        printGraph();
+
+        return answer;
+    }
+
+    private void printGraph(){
+        int n = vertexesGraph.size();
+        VertexModel currentVertex;
+        EdgeModel currentEdge;
+
+        for (int i = 0; i<n; i++){
+            currentVertex = vertexesGraph.get(i);
+            System.out.println(currentVertex);
+
+            int m = currentVertex.getEdgeSize();
+            for (int j=0; j<m; j++){
+                currentEdge = currentVertex.getEdgeAtIndex(j);
+                System.out.println(currentEdge.getStart()+" "+currentEdge.getFinish()+" "+currentEdge.getWeight());
             }
         }
-        else{
-            return null;
-        }
-
     }
 }

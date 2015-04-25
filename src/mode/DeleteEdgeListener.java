@@ -1,5 +1,6 @@
 package mode;
 
+import graph.EdgeModel;
 import graphview.EdgeView;
 import graphview.WorkingArea;
 
@@ -20,6 +21,10 @@ public class DeleteEdgeListener implements MouseListener,MouseMotionListener {
     @Override
     public void mouseClicked(MouseEvent e) {
         if (boxDrawing.getGreenEdge() != null){
+            EdgeModel oldEdgeModel = boxDrawing.getGreenEdge().getEdgeRoot();
+            boxDrawing.getGreenEdge().getStart().getVertexRoot().removeEdge(oldEdgeModel);
+            boxDrawing.getGreenEdge().getFinish().getVertexRoot().removeEdge(oldEdgeModel);
+
             boxDrawing.getGreenEdge().getIdentifier().setVisible(false);
             boxDrawing.getGreenEdge().getStart().removeEdge(boxDrawing.getGreenEdge());
             boxDrawing.getGreenEdge().getFinish().removeEdge(boxDrawing.getGreenEdge());

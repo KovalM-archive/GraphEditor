@@ -1,11 +1,14 @@
 package graphview;
 
+import graph.EdgeModel;
+
 import javax.swing.JLabel;
 
 public class EdgeView {
     private JLabel identifier;
     private VertexView start;
     private VertexView finish;
+    private EdgeModel edgeRoot;
 
     public EdgeView(JLabel identifierCopy) {
         setIdentifier(identifierCopy);
@@ -35,4 +38,11 @@ public class EdgeView {
         this.finish = finish;
     }
 
+    public EdgeModel getEdgeRoot() {
+        return edgeRoot;
+    }
+
+    public void setEdgeRoot(EdgeModel edgeRoot) {
+        this.edgeRoot = edgeRoot;
+    }
 }

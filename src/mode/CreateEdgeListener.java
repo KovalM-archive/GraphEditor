@@ -1,5 +1,6 @@
 package mode;
 
+import graph.EdgeModel;
 import graphview.EdgeView;
 import graphview.VertexView;
 import graphview.WorkingArea;
@@ -42,6 +43,12 @@ public class CreateEdgeListener extends MouseAdapter {
             newEdge.getFinish().addEdge(boxDrawing.getCurrentEdge());
             boxDrawing.getAllEdges().addEdges(boxDrawing.getCurrentEdge());
             boxDrawing.add(newEdge.getIdentifier());
+
+            EdgeModel newEdgeModel = new EdgeModel(newEdge.getStart().getVertexRoot(),newEdge.getFinish().getVertexRoot());
+            newEdge.setEdgeRoot(newEdgeModel);
+            newEdge.getStart().getVertexRoot().addEdge(newEdgeModel);
+            newEdge.getFinish().getVertexRoot().addEdge(newEdgeModel);
+
             boxDrawing.setCurrentEdge(null);
         }
     }

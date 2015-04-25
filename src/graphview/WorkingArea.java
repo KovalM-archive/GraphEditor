@@ -14,6 +14,7 @@ public class WorkingArea extends JPanel {
     private BufferedImage temp;
     private Color colorOfLine;
     private EdgeView greenEdge;
+    private GraphView graphView;
 
     public void setColorBuffer(Color clr){
         colorOfLine = clr;
@@ -21,6 +22,7 @@ public class WorkingArea extends JPanel {
 
     public WorkingArea(){
         super();
+        graphView = new GraphView();
         temp = new BufferedImage(1500,1500,BufferedImage.TYPE_INT_ARGB);
         buffer = new BufferedImage(1500,1500,BufferedImage.TYPE_INT_ARGB);
         allEdges = new EdgesList();
@@ -204,5 +206,13 @@ public class WorkingArea extends JPanel {
 
     public void setGreenEdge(EdgeView greenEdge) {
         this.greenEdge = greenEdge;
+    }
+
+    public GraphView getGraphView() {
+        return graphView;
+    }
+
+    public void setGraphView(GraphView graphView) {
+        this.graphView = graphView;
     }
 }
