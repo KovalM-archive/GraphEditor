@@ -2,14 +2,13 @@ package graphview;
 
 import constants.EdgeConst;
 import constants.VertexConst;
-import graph.Graph;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import javax.swing.JPanel;
 
 public class WorkingArea extends JPanel {
-    private EdgeView currenEdge;
+    private EdgeView currentEdge;
     private EdgesList allEdges;
     private BufferedImage buffer;
     private BufferedImage temp;
@@ -28,12 +27,12 @@ public class WorkingArea extends JPanel {
         colorOfLine = Color.black;
     }
 
-    public EdgeView getCurrenEdge() {
-        return currenEdge;
+    public EdgeView getCurrentEdge() {
+        return currentEdge;
     }
 
-    public void setCurrenEdge(EdgeView currenEdge) {
-        this.currenEdge = currenEdge;
+    public void setCurrentEdge(EdgeView currentEdge) {
+        this.currentEdge = currentEdge;
     }
 
     public void drawEdge(EdgeView currentEdge){
@@ -166,7 +165,7 @@ public class WorkingArea extends JPanel {
 
         Graphics2D g2 = (Graphics2D)g;
         g2.drawImage(buffer, null,null);
-        if (currenEdge!=null) g2.drawImage(temp, null,null);
+        if (currentEdge !=null) g2.drawImage(temp, null,null);
     }
 
     protected void drawTip(Graphics2D painter,int x1, int y1, int x2,int y2){

@@ -21,12 +21,12 @@ public class CreateEdgeListener extends MouseAdapter {
 
     @Override
     public void mouseClicked(MouseEvent e) {
-        if (boxDrawing.getCurrenEdge() == null) {
+        if (boxDrawing.getCurrentEdge() == null) {
             newEdge = new EdgeView(new JLabel(""));
             newEdge.setStart(vertex);
-            boxDrawing.setCurrenEdge(newEdge);
+            boxDrawing.setCurrentEdge(newEdge);
         } else {
-            newEdge = boxDrawing.getCurrenEdge();
+            newEdge = boxDrawing.getCurrentEdge();
             newEdge.setFinish(vertex);
 
             int x1 = newEdge.getStart().getX() + VertexConst.VERTEX_SIZE_X / 2;
@@ -36,13 +36,13 @@ public class CreateEdgeListener extends MouseAdapter {
             int x = Math.min(x1, x2) + Math.abs(x1 - x2) / 2;
             int y = Math.min(y1, y2) + Math.abs(y1 - y2) / 2;
 
-            boxDrawing.drawEdge(boxDrawing.getCurrenEdge());
+            boxDrawing.drawEdge(boxDrawing.getCurrentEdge());
             newEdge.getIdentifier().setBounds(x, y, VertexConst.FONT_SIZE * 4, VertexConst.FONT_SIZE);
-            newEdge.getStart().addEdge(boxDrawing.getCurrenEdge());
-            newEdge.getFinish().addEdge(boxDrawing.getCurrenEdge());
-            boxDrawing.getAllEdges().addEdges(boxDrawing.getCurrenEdge());
+            newEdge.getStart().addEdge(boxDrawing.getCurrentEdge());
+            newEdge.getFinish().addEdge(boxDrawing.getCurrentEdge());
+            boxDrawing.getAllEdges().addEdges(boxDrawing.getCurrentEdge());
             boxDrawing.add(newEdge.getIdentifier());
-            boxDrawing.setCurrenEdge(null);
+            boxDrawing.setCurrentEdge(null);
         }
     }
 
@@ -57,5 +57,4 @@ public class CreateEdgeListener extends MouseAdapter {
         vertex.setIcon(VertexConst.GREY_VERTEX_IMAGE);
         vertex.updateUI();
     }
-
 }

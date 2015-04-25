@@ -1,4 +1,4 @@
-package mode;
+package algoritmsmode;
 
 import graphview.VertexView;
 import graphview.WorkingArea;
@@ -9,14 +9,12 @@ import java.awt.Cursor;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 
-public class CreateMoveVertexModeListener extends ModeListener {
-
-    public CreateMoveVertexModeListener(JTabbedPane jtpVkladkaCopy, JToolBar jtbMainCopy){
-        super(jtpVkladkaCopy, jtbMainCopy);
-        changeMode();
+public class FindMinPathListener extends AlgorithmModeListener {
+    public FindMinPathListener(JTabbedPane jtpVkladkaCopy, JToolBar jtbMainCopy, JToolBar jtbAlgorithmCopy) {
+        super(jtpVkladkaCopy, jtbMainCopy, jtbAlgorithmCopy);
     }
 
-    protected void changeMode() {
+    protected void changeMode(){
         int numberPanel = jtpVkladka.getComponentCount();
         for (int i = 0; i < numberPanel; i++) {
             WorkingArea currentPanel = (WorkingArea)jtpVkladka.getComponentAt(i);
@@ -32,9 +30,13 @@ public class CreateMoveVertexModeListener extends ModeListener {
                         currentVertex.removeMouseListener(currentListener);
                     }
 
-                    currentVertex.addMouseMotionListener(new MoveVertexListener(currentVertex, currentPanel));
-                    currentVertex.addMouseListener(new ClickVertexListener(currentVertex));
+                    MouseMotionListener currentPanelMotionListeners[] = currentVertex.getMouseMotionListeners();
 
+                    for (MouseMotionListener currentListener : currentPanelMotionListeners){
+                        currentVertex.removeMouseMotionListener(currentListener);
+                    }
+
+                    currentVertex.addMouseListener(new ClickVertexSFListener(currentVertex,currentPanel));
                 } catch (Exception error){
                     System.out.println("No vertex");
                 }
@@ -51,8 +53,6 @@ public class CreateMoveVertexModeListener extends ModeListener {
             for (MouseMotionListener currentListener : currentPanelMotionListeners){
                 currentPanel.removeMouseMotionListener(currentListener);
             }
-
-            currentPanel.addMouseListener(new CreateVertexListener(currentPanel,jtbMain));
             currentPanel.setCursor(Cursor.getDefaultCursor());
         }
     }

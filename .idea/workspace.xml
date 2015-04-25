@@ -2,65 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ae12c765-fd20-4f0e-b469-143340d003a2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/constants/EdgeConst.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/graphview/EdgeView.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/graph/Graph.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/graph/VertexModel.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/graphview/VertexView.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" />
-      <change type="DELETED" beforePath="E:\studies\2_level\part_2\PPvIS\GraphEditor\image\toolbar\181.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\studies\2_level\part_2\PPvIS\GraphEditor\out\production\GraphEditor\listeners\BoxDrawingListener.class" afterPath="" />
-      <change type="DELETED" beforePath="E:\studies\2_level\part_2\PPvIS\GraphEditor\out\production\GraphEditor\listeners\NewMenuListener.class" afterPath="" />
-      <change type="DELETED" beforePath="E:\studies\2_level\part_2\PPvIS\GraphEditor\out\production\GraphEditor\listeners\modeListeners\ChangeEdgeName.class" afterPath="" />
-      <change type="DELETED" beforePath="E:\studies\2_level\part_2\PPvIS\GraphEditor\out\production\GraphEditor\listeners\modeListeners\ChangeIdentifierModeListener.class" afterPath="" />
-      <change type="DELETED" beforePath="E:\studies\2_level\part_2\PPvIS\GraphEditor\out\production\GraphEditor\listeners\modeListeners\ChangeVertexName.class" afterPath="" />
-      <change type="DELETED" beforePath="E:\studies\2_level\part_2\PPvIS\GraphEditor\out\production\GraphEditor\listeners\modeListeners\ClickVertexListener.class" afterPath="" />
-      <change type="DELETED" beforePath="E:\studies\2_level\part_2\PPvIS\GraphEditor\out\production\GraphEditor\listeners\modeListeners\CreateEdgeListener.class" afterPath="" />
-      <change type="DELETED" beforePath="E:\studies\2_level\part_2\PPvIS\GraphEditor\out\production\GraphEditor\listeners\modeListeners\CreateEdgeModeListener.class" afterPath="" />
-      <change type="DELETED" beforePath="E:\studies\2_level\part_2\PPvIS\GraphEditor\out\production\GraphEditor\listeners\modeListeners\CreateMoveVertexModeListener.class" afterPath="" />
-      <change type="DELETED" beforePath="E:\studies\2_level\part_2\PPvIS\GraphEditor\out\production\GraphEditor\listeners\modeListeners\DeleteEdgeListener.class" afterPath="" />
-      <change type="DELETED" beforePath="E:\studies\2_level\part_2\PPvIS\GraphEditor\out\production\GraphEditor\listeners\modeListeners\DeleteModeListener.class" afterPath="" />
-      <change type="DELETED" beforePath="E:\studies\2_level\part_2\PPvIS\GraphEditor\out\production\GraphEditor\listeners\modeListeners\DeleteVertexListener.class" afterPath="" />
-      <change type="DELETED" beforePath="E:\studies\2_level\part_2\PPvIS\GraphEditor\out\production\GraphEditor\listeners\modeListeners\ModeListener.class" afterPath="" />
-      <change type="DELETED" beforePath="E:\studies\2_level\part_2\PPvIS\GraphEditor\out\production\GraphEditor\listeners\modeListeners\MoveVertexListener.class" afterPath="" />
-      <change type="DELETED" beforePath="E:\studies\2_level\part_2\PPvIS\GraphEditor\out\production\GraphEditor\listeners\modeListeners\PaintEdgeListener.class" afterPath="" />
-      <change type="DELETED" beforePath="E:\studies\2_level\part_2\PPvIS\GraphEditor\out\production\GraphEditor\mediators\CurrentVertexMediator.class" afterPath="" />
-      <change type="DELETED" beforePath="E:\studies\2_level\part_2\PPvIS\GraphEditor\out\production\GraphEditor\mediators\CursorScin.class" afterPath="" />
-      <change type="DELETED" beforePath="E:\studies\2_level\part_2\PPvIS\GraphEditor\out\production\GraphEditor\model\Edge.class" afterPath="" />
-      <change type="DELETED" beforePath="E:\studies\2_level\part_2\PPvIS\GraphEditor\out\production\GraphEditor\model\EdgesList.class" afterPath="" />
-      <change type="DELETED" beforePath="E:\studies\2_level\part_2\PPvIS\GraphEditor\out\production\GraphEditor\model\MainWindow$1.class" afterPath="" />
-      <change type="DELETED" beforePath="E:\studies\2_level\part_2\PPvIS\GraphEditor\out\production\GraphEditor\model\MainWindow.class" afterPath="" />
-      <change type="DELETED" beforePath="E:\studies\2_level\part_2\PPvIS\GraphEditor\out\production\GraphEditor\model\Vertex.class" afterPath="" />
-      <change type="DELETED" beforePath="E:\studies\2_level\part_2\PPvIS\GraphEditor\out\production\GraphEditor\model\WorkingArea.class" afterPath="" />
-      <change type="DELETED" beforePath="E:\studies\2_level\part_2\PPvIS\GraphEditor\out\production\GraphEditor\myConstants\EdgeConst.class" afterPath="" />
-      <change type="DELETED" beforePath="E:\studies\2_level\part_2\PPvIS\GraphEditor\out\production\GraphEditor\myConstants\ImageConst.class" afterPath="" />
-      <change type="DELETED" beforePath="E:\studies\2_level\part_2\PPvIS\GraphEditor\out\production\GraphEditor\myConstants\VertexConst.class" afterPath="" />
-      <change type="DELETED" beforePath="E:\studies\2_level\part_2\PPvIS\GraphEditor\src\mediators\CurrentVertexMediator.java" afterPath="" />
-      <change type="DELETED" beforePath="E:\studies\2_level\part_2\PPvIS\GraphEditor\src\mediators\CursorScin.java" afterPath="" />
-      <change type="DELETED" beforePath="E:\studies\2_level\part_2\PPvIS\GraphEditor\src\model\Edge.java" afterPath="" />
-      <change type="DELETED" beforePath="E:\studies\2_level\part_2\PPvIS\GraphEditor\src\myConstants\EdgeConst.java" afterPath="" />
-      <change type="DELETED" beforePath="E:\studies\2_level\part_2\PPvIS\GraphEditor\src\myConstants\VertexConst.java" afterPath="" />
-      <change type="DELETED" beforePath="E:\studies\2_level\part_2\PPvIS\GraphEditor\src\objects\Vertex.java" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/algoritmsmode/AlgorithmModeListener.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/algoritmsmode/ClickVertexSFListener.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/algoritmsmode/FindMinPathListener.java" />
+      <change type="DELETED" beforePath="E:\studies\2_level\part_2\PPvIS\GraphEditor\image\cursor\edge.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\studies\2_level\part_2\PPvIS\GraphEditor\image\cursor\pointer.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\studies\2_level\part_2\PPvIS\GraphEditor\image\cursor\right.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\studies\2_level\part_2\PPvIS\GraphEditor\image\toolbar\1.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\studies\2_level\part_2\PPvIS\GraphEditor\image\toolbar\2.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\studies\2_level\part_2\PPvIS\GraphEditor\image\toolbar\3.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\studies\2_level\part_2\PPvIS\GraphEditor\image\toolbar\4.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\studies\2_level\part_2\PPvIS\GraphEditor\image\toolbar\round.png" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/GraphEditor/mode/CreateEdgeListener.class" afterPath="$PROJECT_DIR$/out/production/GraphEditor/mode/CreateEdgeListener.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/GraphEditor/mode/CreateMoveVertexModeListener.class" afterPath="$PROJECT_DIR$/out/production/GraphEditor/mode/CreateMoveVertexModeListener.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/GraphEditor/graphview/MainWindow$1.class" afterPath="$PROJECT_DIR$/out/production/GraphEditor/graphview/MainWindow$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/GraphEditor/graphview/MainWindow.class" afterPath="$PROJECT_DIR$/out/production/GraphEditor/graphview/MainWindow.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/GraphEditor/mode/ModeListener.class" afterPath="$PROJECT_DIR$/out/production/GraphEditor/mode/ModeListener.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/GraphEditor/mode/PaintEdgeListener.class" afterPath="$PROJECT_DIR$/out/production/GraphEditor/mode/PaintEdgeListener.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/GraphEditor/graphview/WorkingArea.class" afterPath="$PROJECT_DIR$/out/production/GraphEditor/graphview/WorkingArea.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/mode/CreateEdgeListener.java" afterPath="$PROJECT_DIR$/src/mode/CreateEdgeListener.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/mode/CreateMoveVertexModeListener.java" afterPath="$PROJECT_DIR$/src/mode/CreateMoveVertexModeListener.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/graphview/MainWindow.java" afterPath="$PROJECT_DIR$/src/graphview/MainWindow.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/mode/ModeListener.java" afterPath="$PROJECT_DIR$/src/mode/ModeListener.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/mode/PaintEdgeListener.java" afterPath="$PROJECT_DIR$/src/mode/PaintEdgeListener.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/graphview/WorkingArea.java" afterPath="$PROJECT_DIR$/src/graphview/WorkingArea.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MOVED" beforePath="E:\studies\2_level\part_2\PPvIS\GraphEditor\src\listeners\BoxDrawingListener.java" afterPath="$PROJECT_DIR$/src/mode/BoxDrawingListener.java" />
-      <change type="MOVED" beforePath="E:\studies\2_level\part_2\PPvIS\GraphEditor\src\listeners\NewMenuListener.java" afterPath="$PROJECT_DIR$/src/mode/NewMenuListener.java" />
-      <change type="MOVED" beforePath="E:\studies\2_level\part_2\PPvIS\GraphEditor\src\listeners\modeListeners\ChangeEdgeName.java" afterPath="$PROJECT_DIR$/src/mode/ChangeEdgeName.java" />
-      <change type="MOVED" beforePath="E:\studies\2_level\part_2\PPvIS\GraphEditor\src\listeners\modeListeners\ChangeIdentifierModeListener.java" afterPath="$PROJECT_DIR$/src/mode/ChangeIdentifierModeListener.java" />
-      <change type="MOVED" beforePath="E:\studies\2_level\part_2\PPvIS\GraphEditor\src\listeners\modeListeners\ChangeVertexName.java" afterPath="$PROJECT_DIR$/src/mode/ChangeVertexName.java" />
-      <change type="MOVED" beforePath="E:\studies\2_level\part_2\PPvIS\GraphEditor\src\listeners\modeListeners\ClickVertexListener.java" afterPath="$PROJECT_DIR$/src/mode/ClickVertexListener.java" />
-      <change type="MOVED" beforePath="E:\studies\2_level\part_2\PPvIS\GraphEditor\src\listeners\modeListeners\CreateEdgeListener.java" afterPath="$PROJECT_DIR$/src/mode/CreateEdgeListener.java" />
-      <change type="MOVED" beforePath="E:\studies\2_level\part_2\PPvIS\GraphEditor\src\listeners\modeListeners\CreateEdgeModeListener.java" afterPath="$PROJECT_DIR$/src/mode/CreateEdgeModeListener.java" />
-      <change type="MOVED" beforePath="E:\studies\2_level\part_2\PPvIS\GraphEditor\src\listeners\modeListeners\CreateMoveVertexModeListener.java" afterPath="$PROJECT_DIR$/src/mode/CreateMoveVertexModeListener.java" />
-      <change type="MOVED" beforePath="E:\studies\2_level\part_2\PPvIS\GraphEditor\src\listeners\modeListeners\DeleteEdgeListener.java" afterPath="$PROJECT_DIR$/src/mode/DeleteEdgeListener.java" />
-      <change type="MOVED" beforePath="E:\studies\2_level\part_2\PPvIS\GraphEditor\src\listeners\modeListeners\DeleteModeListener.java" afterPath="$PROJECT_DIR$/src/mode/DeleteModeListener.java" />
-      <change type="MOVED" beforePath="E:\studies\2_level\part_2\PPvIS\GraphEditor\src\listeners\modeListeners\DeleteVertexListener.java" afterPath="$PROJECT_DIR$/src/mode/DeleteVertexListener.java" />
-      <change type="MOVED" beforePath="E:\studies\2_level\part_2\PPvIS\GraphEditor\src\listeners\modeListeners\ModeListener.java" afterPath="$PROJECT_DIR$/src/mode/ModeListener.java" />
-      <change type="MOVED" beforePath="E:\studies\2_level\part_2\PPvIS\GraphEditor\src\listeners\modeListeners\MoveVertexListener.java" afterPath="$PROJECT_DIR$/src/mode/MoveVertexListener.java" />
-      <change type="MOVED" beforePath="E:\studies\2_level\part_2\PPvIS\GraphEditor\src\listeners\modeListeners\PaintEdgeListener.java" afterPath="$PROJECT_DIR$/src/mode/PaintEdgeListener.java" />
-      <change type="MOVED" beforePath="E:\studies\2_level\part_2\PPvIS\GraphEditor\src\model\EdgesList.java" afterPath="$PROJECT_DIR$/src/graphview/EdgesList.java" />
-      <change type="MOVED" beforePath="E:\studies\2_level\part_2\PPvIS\GraphEditor\src\model\MainWindow.java" afterPath="$PROJECT_DIR$/src/graphview/MainWindow.java" />
-      <change type="MOVED" beforePath="E:\studies\2_level\part_2\PPvIS\GraphEditor\src\model\WorkingArea.java" afterPath="$PROJECT_DIR$/src/graphview/WorkingArea.java" />
-      <change type="MOVED" beforePath="E:\studies\2_level\part_2\PPvIS\GraphEditor\src\myConstants\ImageConst.java" afterPath="$PROJECT_DIR$/src/constants/VertexConst.java" />
+      <change type="MOVED" beforePath="E:\studies\2_level\part_2\PPvIS\GraphEditor\src\graph\Graph.java" afterPath="$PROJECT_DIR$/src/graph/GraphModel.java" />
+      <change type="MOVED" beforePath="E:\studies\2_level\part_2\PPvIS\GraphEditor\src\mode\BoxDrawingListener.java" afterPath="$PROJECT_DIR$/src/mode/CreateVertexListener.java" />
+      <change type="MOVED" beforePath="E:\studies\2_level\part_2\PPvIS\GraphEditor\src\mode\NewMenuListener.java" afterPath="$PROJECT_DIR$/src/menu/NewMenuListener.java" />
     </list>
     <ignored path="GraphEditor.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -89,82 +58,28 @@
       <file leaf-file-name="CreateEdgeListener.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/mode/CreateEdgeListener.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="520" max-vertical-offset="1139">
-              <caret line="42" column="44" selection-start-line="42" selection-start-column="44" selection-end-line="42" selection-end-column="44" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PaintEdgeListener.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/mode/PaintEdgeListener.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="418" max-vertical-offset="816">
-              <caret line="41" column="5" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1003">
+              <caret line="12" column="2" selection-start-line="12" selection-start-column="2" selection-end-line="14" selection-end-column="29" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CreateEdgeModeListener.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/mode/CreateEdgeModeListener.java">
+      <file leaf-file-name="CreateVertexListener.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/mode/CreateVertexListener.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1156">
-              <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="10" max-vertical-offset="765">
+              <caret line="24" column="17" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainWindow.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/graphview/MainWindow.java">
+      <file leaf-file-name="ChangeIdentifierModeListener.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/mode/ChangeIdentifierModeListener.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1683" max-vertical-offset="2295">
-              <caret line="113" column="0" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="VertexConst.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/constants/VertexConst.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="289">
-              <caret line="9" column="56" selection-start-line="9" selection-start-column="56" selection-end-line="9" selection-end-column="56" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Graph.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/graph/Graph.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.23115578" vertical-offset="350" max-vertical-offset="748">
-              <caret line="37" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="VertexModel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/graph/VertexModel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="238">
-              <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="VertexView.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/graphview/VertexView.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="680">
-              <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="359" max-vertical-offset="1122">
+              <caret line="50" column="46" selection-start-line="50" selection-start-column="46" selection-end-line="50" selection-end-column="46" />
               <folding />
             </state>
           </provider>
@@ -173,8 +88,38 @@
       <file leaf-file-name="CreateMoveVertexModeListener.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/mode/CreateMoveVertexModeListener.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="741" max-vertical-offset="1139">
-              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="986">
+              <caret line="19" column="7" selection-start-line="19" selection-start-column="7" selection-end-line="56" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GraphModel.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/graph/GraphModel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.37185928" vertical-offset="141" max-vertical-offset="748">
+              <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ModeListener.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/mode/ModeListener.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="663">
+              <caret line="23" column="8" selection-start-line="23" selection-start-column="8" selection-end-line="30" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AlgorithmModeListener.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/algoritmsmode/AlgorithmModeListener.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1472" max-vertical-offset="2023">
+              <caret line="90" column="51" selection-start-line="90" selection-start-column="51" selection-end-line="90" selection-end-column="51" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -182,12 +127,38 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BoxDrawingListener.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/mode/BoxDrawingListener.java">
+      <file leaf-file-name="FindMinPathListener.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/algoritmsmode/FindMinPathListener.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="765">
-              <caret line="24" column="17" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
-              <folding />
+            <state vertical-scroll-proportion="0.0" vertical-offset="55" max-vertical-offset="1105">
+              <caret line="38" column="104" selection-start-line="38" selection-start-column="104" selection-end-line="38" selection-end-column="104" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WorkingArea.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/graphview/WorkingArea.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="3400">
+              <caret line="9" column="33" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ClickVertexSFListener.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/algoritmsmode/ClickVertexSFListener.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="265" max-vertical-offset="986">
+              <caret line="27" column="13" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -200,12 +171,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/mediators/CurrentVertexMediator.java" />
-        <option value="$PROJECT_DIR$/src/model/Vertex.java" />
-        <option value="$PROJECT_DIR$/src/model/WorkingArea.java" />
-        <option value="$PROJECT_DIR$/src/model/Edge.java" />
-        <option value="$PROJECT_DIR$/src/myConstants/VertexConst.java" />
-        <option value="$PROJECT_DIR$/src/myConstants/ImageConst.java" />
         <option value="$PROJECT_DIR$/src/listeners/modeListeners/DeleteVertexListener.java" />
         <option value="$PROJECT_DIR$/src/listeners/modeListeners/ChangeEdgeName.java" />
         <option value="$PROJECT_DIR$/src/listeners/modeListeners/ChangeIdentifierModeListener.java" />
@@ -238,18 +203,25 @@
         <option value="$PROJECT_DIR$/src/graph/VertexModel.java" />
         <option value="$PROJECT_DIR$/src/mode/NewMenuListener.java" />
         <option value="$PROJECT_DIR$/src/constants/EdgeConst.java" />
-        <option value="$PROJECT_DIR$/src/graphview/WorkingArea.java" />
         <option value="$PROJECT_DIR$/src/constants/VertexConst.java" />
         <option value="$PROJECT_DIR$/src/mode/ClickVertexListener.java" />
-        <option value="$PROJECT_DIR$/src/mode/CreateMoveVertexModeListener.java" />
         <option value="$PROJECT_DIR$/src/mode/BoxDrawingListener.java" />
         <option value="$PROJECT_DIR$/src/mode/MoveVertexListener.java" />
         <option value="$PROJECT_DIR$/src/mode/DeleteModeListener.java" />
         <option value="$PROJECT_DIR$/src/mode/ChangeIdentifierModeListener.java" />
-        <option value="$PROJECT_DIR$/src/mode/CreateEdgeListener.java" />
         <option value="$PROJECT_DIR$/src/mode/PaintEdgeListener.java" />
         <option value="$PROJECT_DIR$/src/mode/CreateEdgeModeListener.java" />
+        <option value="$PROJECT_DIR$/src/menu/FindMinPathListener.java" />
+        <option value="$PROJECT_DIR$/src/menu/NewMenuListener.java" />
+        <option value="$PROJECT_DIR$/src/mode/CreateMoveVertexModeListener.java" />
+        <option value="$PROJECT_DIR$/src/mode/CreateVertexListener.java" />
         <option value="$PROJECT_DIR$/src/graphview/MainWindow.java" />
+        <option value="$PROJECT_DIR$/src/mode/ModeListener.java" />
+        <option value="$PROJECT_DIR$/src/algoritmsmode/AlgorithmModeListener.java" />
+        <option value="$PROJECT_DIR$/src/graphview/WorkingArea.java" />
+        <option value="$PROJECT_DIR$/src/mode/CreateEdgeListener.java" />
+        <option value="$PROJECT_DIR$/src/algoritmsmode/FindMinPathListener.java" />
+        <option value="$PROJECT_DIR$/src/algoritmsmode/ClickVertexSFListener.java" />
       </list>
     </option>
   </component>
@@ -337,6 +309,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="menu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GraphEditor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GraphEditor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="graphview" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -373,10 +363,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GraphEditor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GraphEditor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="algoritmsmode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -418,7 +426,13 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="GraphEditor" />
       <envs />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
       <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
@@ -701,15 +715,16 @@
       <workItem from="1429849043615" duration="585000" />
       <workItem from="1429854659224" duration="2987000" />
       <workItem from="1429861307922" duration="6812000" />
+      <workItem from="1429975519447" duration="11149000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59321000" />
+    <option name="totallyTimeSpent" value="70470000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -722,7 +737,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32913387" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32913387" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.238653" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -775,36 +790,10 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/mode/BoxDrawingListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="442" max-vertical-offset="1173">
-          <caret line="26" column="54" selection-start-line="26" selection-start-column="54" selection-end-line="26" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/graphview/WorkingArea.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="3043">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/graphview/VertexView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="680">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/graphview/EdgeView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="510">
           <caret line="7" column="26" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -812,9 +801,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="442" max-vertical-offset="544">
           <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -840,7 +826,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="1105">
           <caret line="12" column="6" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="7" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -866,9 +852,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="571" max-vertical-offset="1207">
           <caret line="68" column="21" selection-start-line="68" selection-start-column="21" selection-end-line="68" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -876,9 +860,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="289">
           <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -886,7 +867,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="248" max-vertical-offset="1292">
           <caret line="34" column="97" selection-start-line="33" selection-start-column="8" selection-end-line="34" selection-end-column="97" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -921,9 +901,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="571" max-vertical-offset="1207">
           <caret line="68" column="21" selection-start-line="68" selection-start-column="21" selection-end-line="68" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -931,9 +909,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="289">
           <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -941,7 +916,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="248" max-vertical-offset="1292">
           <caret line="34" column="97" selection-start-line="33" selection-start-column="8" selection-end-line="34" selection-end-column="97" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -976,9 +950,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="571" max-vertical-offset="1207">
           <caret line="68" column="21" selection-start-line="68" selection-start-column="21" selection-end-line="68" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -986,9 +958,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="289">
           <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -996,7 +965,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="248" max-vertical-offset="1292">
           <caret line="34" column="97" selection-start-line="33" selection-start-column="8" selection-end-line="34" selection-end-column="97" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1017,13 +985,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/mode/ModeListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="748">
-          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/mode/DeleteEdgeListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="974" max-vertical-offset="1649">
@@ -1039,23 +1000,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/graphview/WorkingArea.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2742" max-vertical-offset="3417">
-          <caret line="186" column="0" selection-start-line="186" selection-start-column="0" selection-end-line="186" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/mode/NewMenuListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="748">
-          <caret line="23" column="49" selection-start-line="23" selection-start-column="49" selection-end-line="23" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/mode/ClickVertexListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="27" max-vertical-offset="459">
@@ -1068,9 +1012,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="29" max-vertical-offset="510">
           <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1078,7 +1019,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="10" max-vertical-offset="510">
           <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1097,7 +1037,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="21" max-vertical-offset="1105">
           <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1120,54 +1060,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/mode/DeleteModeListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="629" max-vertical-offset="1071">
-          <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/mode/ChangeIdentifierModeListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="359" max-vertical-offset="1122">
-          <caret line="50" column="46" selection-start-line="50" selection-start-column="46" selection-end-line="50" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/mode/BoxDrawingListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="765">
-          <caret line="24" column="17" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/mode/CreateMoveVertexModeListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="741" max-vertical-offset="1139">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/mode/PaintEdgeListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="418" max-vertical-offset="816">
           <caret line="41" column="5" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/mode/CreateEdgeListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="520" max-vertical-offset="1139">
-          <caret line="42" column="44" selection-start-line="42" selection-start-column="44" selection-end-line="42" selection-end-column="44" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#385#386#0" expanded="false" />
+            <element signature="e#429#430#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1176,7 +1076,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1156">
           <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1184,14 +1086,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="289">
           <caret line="9" column="56" selection-start-line="9" selection-start-column="56" selection-end-line="9" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/graphview/VertexView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="680">
-          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1204,20 +1098,124 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/graphview/VertexView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="680">
+          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mode/DeleteModeListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="629" max-vertical-offset="1071">
+          <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/menu/NewMenuListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="265" max-vertical-offset="748">
+          <caret line="42" column="38" selection-start-line="42" selection-start-column="38" selection-end-line="42" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/graphview/MainWindow.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1683" max-vertical-offset="2295">
-          <caret line="113" column="0" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1768" max-vertical-offset="2363">
+          <caret line="119" column="99" selection-start-line="119" selection-start-column="99" selection-end-line="119" selection-end-column="99" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/graph/Graph.java">
+    <entry file="file://$PROJECT_DIR$/src/mode/ModeListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.23115578" vertical-offset="350" max-vertical-offset="748">
-          <caret line="37" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="663">
+          <caret line="23" column="8" selection-start-line="23" selection-start-column="8" selection-end-line="30" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mode/CreateVertexListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="765">
+          <caret line="24" column="17" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mode/ChangeIdentifierModeListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="359" max-vertical-offset="1122">
+          <caret line="50" column="46" selection-start-line="50" selection-start-column="46" selection-end-line="50" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mode/CreateMoveVertexModeListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="986">
+          <caret line="19" column="7" selection-start-line="19" selection-start-column="7" selection-end-line="56" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/algoritmsmode/AlgorithmModeListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1472" max-vertical-offset="2023">
+          <caret line="90" column="51" selection-start-line="90" selection-start-column="51" selection-end-line="90" selection-end-column="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/graphview/WorkingArea.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="3400">
+          <caret line="9" column="33" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mode/CreateEdgeListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1003">
+          <caret line="12" column="2" selection-start-line="12" selection-start-column="2" selection-end-line="14" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/algoritmsmode/FindMinPathListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="55" max-vertical-offset="1105">
+          <caret line="38" column="104" selection-start-line="38" selection-start-column="104" selection-end-line="38" selection-end-column="104" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/algoritmsmode/ClickVertexSFListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="265" max-vertical-offset="986">
+          <caret line="27" column="13" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/graph/GraphModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.37185928" vertical-offset="141" max-vertical-offset="748">
+          <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
           <folding />
         </state>
       </provider>

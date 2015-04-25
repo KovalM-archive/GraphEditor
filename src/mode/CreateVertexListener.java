@@ -9,12 +9,12 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
-public class BoxDrawingListener extends MouseAdapter {
+public class CreateVertexListener extends MouseAdapter {
 
     private WorkingArea boxDrawing;
     private JToolBar jtbMain;
 
-    public BoxDrawingListener(WorkingArea boxDrawingCopy, JToolBar jtbMainCopy) {
+    public CreateVertexListener(WorkingArea boxDrawingCopy, JToolBar jtbMainCopy) {
 
         boxDrawing = boxDrawingCopy;
         jtbMain = jtbMainCopy;

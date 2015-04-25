@@ -3,6 +3,7 @@ package mode;
 import javax.swing.JTabbedPane;
 import javax.swing.JToggleButton;
 import javax.swing.JToolBar;
+import java.awt.ComponentOrientation;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -19,8 +20,8 @@ public abstract class ModeListener implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         JToggleButton currentButton;
-
-        for (int i=0; i<4; i++){
+        int count = jtbMain.getComponentCount();
+        for (int i=0; i<count; i++){
             currentButton = (JToggleButton) jtbMain.getComponentAtIndex(i);
             if (e.getActionCommand().equals(currentButton.getActionCommand())){
                 currentButton.setSelected(true);
@@ -28,7 +29,6 @@ public abstract class ModeListener implements ActionListener {
                 currentButton.setSelected(false);
             }
         }
-
         changeMode();
     }
 

@@ -5,10 +5,10 @@ import graphview.VertexView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Graph {
+public class GraphModel {
     private List<VertexView> vertexesGraph;
 
-    public Graph(){
+    public GraphModel(){
         vertexesGraph = new ArrayList<VertexView>();
     }
 
