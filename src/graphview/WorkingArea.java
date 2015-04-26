@@ -22,11 +22,11 @@ public class WorkingArea extends JPanel {
 
     public WorkingArea(){
         super();
-        graphView = new GraphView();
         temp = new BufferedImage(1500,1500,BufferedImage.TYPE_INT_ARGB);
         buffer = new BufferedImage(1500,1500,BufferedImage.TYPE_INT_ARGB);
         allEdges = new EdgesList();
         colorOfLine = Color.black;
+        graphView = new GraphView(this);
     }
 
     public EdgeView getCurrentEdge() {
@@ -40,7 +40,6 @@ public class WorkingArea extends JPanel {
     public void drawEdge(EdgeView currentEdge){
         Graphics pain = buffer.getGraphics();
         Graphics2D painter = (Graphics2D)pain;
-
         int x1,x2,y1,y2;
 
         painter.setStroke(new BasicStroke(4));
@@ -54,7 +53,6 @@ public class WorkingArea extends JPanel {
         y2 = currentEdge.getFinish().getY() + VertexConst.VERTEX_SIZE_Y / 2;
         painter.drawLine(x1,y1,x2,y2);
         drawTip(painter,x1,y1,x2,y2);
-
         repaint();
     }
 
@@ -69,7 +67,6 @@ public class WorkingArea extends JPanel {
         painter.clearRect(0, 0, 1500, 1500);
         painter.drawLine(x1,y1,x2,y2);
         drawTip(painter,x1,y1,x2,y2);
-
         repaint();
     }
 
@@ -164,10 +161,9 @@ public class WorkingArea extends JPanel {
 
     protected void paintComponent(Graphics g){
         super.paintComponent(g);
-
         Graphics2D g2 = (Graphics2D)g;
         g2.drawImage(buffer, null,null);
-        if (currentEdge !=null) g2.drawImage(temp, null,null);
+        if (currentEdge != null) g2.drawImage(temp, null,null);
     }
 
     protected void drawTip(Graphics2D painter,int x1, int y1, int x2,int y2){

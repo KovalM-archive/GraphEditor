@@ -26,6 +26,7 @@ public class DeleteVertexListener implements MouseListener {
         vertex.getIdentifier().setVisible(false);
 
         boxDrawning.getGraphView().getGraphRoot().removeVertex(vertex.getVertexRoot());
+        boxDrawning.getGraphView().removeVertex(vertex);
 
         int n = vertex.getNumberEdges();
         while (n>0){

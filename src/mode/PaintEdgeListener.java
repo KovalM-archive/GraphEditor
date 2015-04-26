@@ -35,7 +35,6 @@ public class PaintEdgeListener extends MouseAdapter implements MouseMotionListen
             int y = Math.min(y1, y2) + Math.abs(y1 - y2) / 2;
 
             boxDrawing.getCurrentEdge().getIdentifier().setBounds(x, y, VertexConst.FONT_SIZE * 4, VertexConst.FONT_SIZE);
-
             boxDrawing.drawEdgeTemp(x1, y1, x2, y2);
         }
     }

@@ -33,9 +33,6 @@ public class GraphModel {
 
     public List<VertexModel> findMinPath(VertexModel start,VertexModel finish){
         List<VertexModel> answer = new ArrayList<VertexModel>();
-
-        printGraph();
-
         return answer;
     }
 

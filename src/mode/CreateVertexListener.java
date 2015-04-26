@@ -33,6 +33,7 @@ public class CreateVertexListener extends MouseAdapter {
                 VertexModel newVertexModel = new VertexModel();
                 vertex.setVertexRoot(newVertexModel);
                 boxDrawing.getGraphView().getGraphRoot().addVertex(newVertexModel);
+                boxDrawing.getGraphView().addVertex(vertex);
 
                 boxDrawing.add(vertex);
                 boxDrawing.add(vertex.getIdentifier());

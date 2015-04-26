@@ -12,7 +12,6 @@ import java.awt.event.MouseEvent;
 public class ClickVertexSFListener extends MouseAdapter {
     private VertexView vertex;
     private WorkingArea boxDrawing;
-    private EdgeView newEdge;
 
     public ClickVertexSFListener(VertexView vertexCopy, WorkingArea boxDrawingCopy) {
         vertex = vertexCopy;
@@ -20,16 +19,11 @@ public class ClickVertexSFListener extends MouseAdapter {
     }
 
     public void mouseClicked(MouseEvent e) {
-        if (boxDrawing.getCurrentEdge() == null) {
-            newEdge = new EdgeView(new JLabel(""));
-            newEdge.setStart(vertex);
-            boxDrawing.setCurrentEdge(newEdge);
+        if (boxDrawing.getGraphView().getStart() == null) {
+            boxDrawing.getGraphView().setStart(vertex);
         } else {
-            newEdge = boxDrawing.getCurrentEdge();
-            newEdge.setFinish(vertex);
-            newEdge.getStart().setIcon(VertexConst.GREY_VERTEX_IMAGE);
-            boxDrawing.getGraphView().showMinPath(newEdge.getStart(),newEdge.getFinish());
-            boxDrawing.setCurrentEdge(null);
+            boxDrawing.getGraphView().showMinPath(boxDrawing.getGraphView().getStart(), vertex);
+            boxDrawing.getGraphView().setStart(null);
         }
     }
 
@@ -39,8 +33,8 @@ public class ClickVertexSFListener extends MouseAdapter {
     }
 
     public void mouseExited(MouseEvent e) {
-        if (boxDrawing.getCurrentEdge() != null){
-            if (!boxDrawing.getCurrentEdge().getStart().equals(vertex)){
+        if (boxDrawing.getGraphView().getStart() != null){
+            if (!boxDrawing.getGraphView().getStart().equals(vertex)){
                 vertex.setIcon(VertexConst.GREY_VERTEX_IMAGE);
                 vertex.updateUI();
             }
