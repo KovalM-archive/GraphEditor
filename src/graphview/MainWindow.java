@@ -1,7 +1,12 @@
 package graphview;
 
 import algoritmsmode.FindMinPathListener;
+import algoritmsmode.FindNumberEdgeListener;
+import algoritmsmode.FindNumberVertexListener;
+import menu.ExitMenuListener;
 import menu.NewMenuListener;
+import menu.OpenMenuListener;
+import menu.SaveMenuListener;
 import mode.ChangeIdentifierModeListener;
 import mode.CreateEdgeModeListener;
 import mode.CreateMoveVertexModeListener;
@@ -32,7 +37,10 @@ public class MainWindow {
         jfMainWin.setLocationRelativeTo(null);
 
         JTabbedPane jtpVkladka = new JTabbedPane(JTabbedPane.TOP,JTabbedPane.WRAP_TAB_LAYOUT);
-        jfMainWin.add(jtpVkladka, BorderLayout.CENTER);
+        JScrollPane jScroll = new JScrollPane(jtpVkladka);
+        jScroll.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
+        jScroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+        jfMainWin.add(jScroll, BorderLayout.CENTER);
 
         JMenuBar jmbMain = new JMenuBar();
         JMenu jmFile = new JMenu("File");
@@ -42,19 +50,13 @@ public class MainWindow {
         jmiCreate.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_N, InputEvent.CTRL_MASK));
         JMenuItem jmiOpen = new JMenuItem("Open",KeyEvent.VK_O);
         jmiOpen.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_O, InputEvent.CTRL_MASK));
-        JMenuItem jmiClose = new JMenuItem("Close", KeyEvent.VK_L);
-        jmiClose.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_L, InputEvent.CTRL_MASK));
         JMenuItem jmiSave = new JMenuItem("Save", KeyEvent.VK_S);
-        jmiSave.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S, InputEvent.CTRL_MASK));
-        JMenuItem jmiSaveAs = new JMenuItem("Save as");
         JMenuItem jmiExit = new JMenuItem("Exit",KeyEvent.VK_Q);
         jmiExit.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Q, InputEvent.CTRL_MASK));
 
         jmFile.add(jmiCreate);
         jmFile.add(jmiOpen);
-        jmFile.add(jmiClose);
         jmFile.add(jmiSave);
-        jmFile.add(jmiSaveAs);
         jmFile.add(jmiExit);
         jmbMain.add(jmFile);
         jfMainWin.setJMenuBar(jmbMain);
@@ -108,21 +110,44 @@ public class MainWindow {
         JToggleButton jbtFindMinPath = new JToggleButton("Find min path");
         jbtFindMinPath.setActionCommand("FindMinPath");
         jbtFindMinPath.setMargin(new Insets(0, 10, 10, 10));
+
+        JToggleButton jbtFindNumberVertexs = new JToggleButton("Find number of vertex");
+        jbtFindNumberVertexs.setActionCommand("FindNumberVertex");
+        jbtFindNumberVertexs.setMargin(new Insets(0, 10, 10, 10));
+
+        JToggleButton jbtFindNumberEdges = new JToggleButton("Find number of edge");
+        jbtFindNumberEdges.setActionCommand("FindNumberEdge");
+        jbtFindNumberEdges.setMargin(new Insets(0, 10, 10, 10));
+
         jtbAlgorithm.add(jbtFindMinPath);
+        jtbAlgorithm.add(jbtFindNumberVertexs);
+        jtbAlgorithm.add(jbtFindNumberEdges);
 
         jtbAlgorithm.setFloatable(false);
         jtbAlgorithm.setVisible(false);
         jfMainWin.add(jtbAlgorithm,BorderLayout.EAST);
 
-        jmiCreate.addActionListener(new NewMenuListener(jtpVkladka,jtbMain,jtbAlgorithm));
-        jbNew.addActionListener(new NewMenuListener(jtpVkladka,jtbMain,jtbAlgorithm));
+        NewMenuListener newMenuListener = new NewMenuListener(jtpVkladka,jtbMain,jtbAlgorithm);
+        jmiCreate.addActionListener(newMenuListener);
+        jbNew.addActionListener(newMenuListener);
+
+        SaveMenuListener saveMenuListener = new SaveMenuListener(jtpVkladka);
+        jmiSave.addActionListener(saveMenuListener);
+        jbSave.addActionListener(saveMenuListener);
+
+        OpenMenuListener openMenuListener = new OpenMenuListener(jtpVkladka,jtbMain,jtbAlgorithm);
+        jmiOpen.addActionListener(openMenuListener);
+        jbOpen.addActionListener(openMenuListener);
+
+        jmiExit.addActionListener(new ExitMenuListener());
 
         jbtFindMinPath.addActionListener(new FindMinPathListener(jtpVkladka,jtbMain,jtbAlgorithm));
+        jbtFindNumberVertexs.addActionListener(new FindNumberVertexListener(jtpVkladka,jtbMain,jtbAlgorithm));
+        jbtFindNumberEdges.addActionListener(new FindNumberEdgeListener(jtpVkladka,jtbMain,jtbAlgorithm));
         jbtVertex.addActionListener(new CreateMoveVertexModeListener(jtpVkladka,jtbMain));
         jbtEdge.addActionListener(new CreateEdgeModeListener(jtpVkladka,jtbMain));
         jbtChanges.addActionListener(new ChangeIdentifierModeListener(jtpVkladka,jtbMain));
         jbtDelete.addActionListener(new DeleteModeListener(jtpVkladka,jtbMain));
-
 
         jfMainWin.setVisible(true);
     }

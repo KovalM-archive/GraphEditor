@@ -1,5 +1,6 @@
 package mode;
 
+import constants.VertexConst;
 import graph.EdgeModel;
 import graphview.EdgeView;
 import graphview.WorkingArea;
@@ -72,29 +73,67 @@ public class DeleteEdgeListener implements MouseListener,MouseMotionListener {
 
         for (int i=0; i<n; i++){
             currentEdge = boxDrawing.getAllEdges().getEdgesAtIndex(i);
-            x1 = currentEdge.getStart().getX() + 9;
-            y1 = currentEdge.getStart().getY() + 9;
-            x2 = currentEdge.getFinish().getX() + 9;
-            y2 = currentEdge.getFinish().getY() + 9;
+            x1 = currentEdge.getStart().getX() + VertexConst.VERTEX_SIZE_X / 2;
+            y1 = currentEdge.getStart().getY() + VertexConst.VERTEX_SIZE_Y / 2;
+            x2 = currentEdge.getFinish().getX() + VertexConst.VERTEX_SIZE_X / 2;
+            y2 = currentEdge.getFinish().getY() + VertexConst.VERTEX_SIZE_Y / 2;
 
-            rast = Math.pow((x1-xMouse)*(x1-xMouse) + (y1-yMouse)*(y1-yMouse),0.5) +
-                    Math.pow((xMouse-x2)*(xMouse-x2) + (yMouse-y2)*(yMouse-y2),0.5) -
-                    Math.pow((x1-x2)*(x1-x2) + (y1-y2)*(y1-y2),0.5);
-            if (rast < min) {
-                min = rast;
-                farEdge = currentEdge;
+            if (x1 == x2 && y1 == y2){
+                x2 = currentEdge.getFinish().getX() + VertexConst.VERTEX_SIZE_X / 2 + 50;
+                y2 = currentEdge.getFinish().getY() + VertexConst.VERTEX_SIZE_Y / 2 - 25;
+                int x3 = currentEdge.getFinish().getX() + VertexConst.VERTEX_SIZE_X / 2 + 50;
+                int y3 = currentEdge.getFinish().getY() + VertexConst.VERTEX_SIZE_Y / 2 + 25;
+                rast = Math.pow((x1-xMouse)*(x1-xMouse) + (y1-yMouse)*(y1-yMouse),0.5) +
+                        Math.pow((xMouse-x2)*(xMouse-x2) + (yMouse-y2)*(yMouse-y2),0.5) -
+                        Math.pow((x1-x2)*(x1-x2) + (y1-y2)*(y1-y2),0.5);
+                if (rast < min) {
+                    min = rast;
+                    farEdge = currentEdge;
+                }
+
+                rast = Math.pow((x1-xMouse)*(x1-xMouse) + (y1-yMouse)*(y1-yMouse),0.5) +
+                        Math.pow((xMouse-x3)*(xMouse-x3) + (yMouse-y3)*(yMouse-y3),0.5) -
+                        Math.pow((x1-x3)*(x1-x3) + (y1-y3)*(y1-y3),0.5);
+                if (rast < min) {
+                    min = rast;
+                    farEdge = currentEdge;
+                }
+
+                rast = Math.pow((x3-xMouse)*(x3-xMouse) + (y3-yMouse)*(y3-yMouse),0.5) +
+                        Math.pow((xMouse-x2)*(xMouse-x2) + (yMouse-y2)*(yMouse-y2),0.5) -
+                        Math.pow((x3-x2)*(x3-x2) + (y3-y2)*(y3-y2),0.5);
+                if (rast < min) {
+                    min = rast;
+                    farEdge = currentEdge;
+                }
+            }else{
+                rast = Math.pow((x1-xMouse)*(x1-xMouse) + (y1-yMouse)*(y1-yMouse),0.5) +
+                        Math.pow((xMouse-x2)*(xMouse-x2) + (yMouse-y2)*(yMouse-y2),0.5) -
+                        Math.pow((x1-x2)*(x1-x2) + (y1-y2)*(y1-y2),0.5);
+                if (rast < min) {
+                    min = rast;
+                    farEdge = currentEdge;
+                }
             }
         }
 
         if (min < 0.4) {
             boxDrawing.setColorBuffer(Color.green);
-            boxDrawing.drawEdge(farEdge);
+            if (farEdge.getStart().equals(farEdge.getFinish())) {
+                boxDrawing.drawLoop(farEdge);
+            }else{
+                boxDrawing.drawEdge(farEdge);
+            }
             boxDrawing.setGreenEdge(farEdge);
             boxDrawing.setColorBuffer(Color.black);
         } else {
             if (boxDrawing.getGreenEdge() != null){
                 boxDrawing.setColorBuffer(Color.black);
-                boxDrawing.drawEdge(boxDrawing.getGreenEdge());
+                if (boxDrawing.getGreenEdge().getStart().equals(boxDrawing.getGreenEdge().getFinish())){
+                    boxDrawing.drawLoop(boxDrawing.getGreenEdge());
+                } else{
+                    boxDrawing.drawEdge(boxDrawing.getGreenEdge());
+                }
             }
             boxDrawing.setGreenEdge(null);
         }

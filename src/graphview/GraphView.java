@@ -1,6 +1,5 @@
 package graphview;
 
-import constants.VertexConst;
 import graph.GraphModel;
 
 import javax.swing.JOptionPane;
@@ -10,6 +9,15 @@ import java.util.List;
 
 public class GraphView {
     private GraphModel graphRoot;
+
+    public List<VertexView> getVertexesGraph() {
+        return vertexesGraph;
+    }
+
+    public void setVertexesGraph(List<VertexView> vertexesGraph) {
+        this.vertexesGraph = vertexesGraph;
+    }
+
     private List<VertexView> vertexesGraph;
     private WorkingArea boxDrawing;
     private VertexView start;
@@ -35,6 +43,14 @@ public class GraphView {
 
     public void setGraphRoot(GraphModel graphRoot) {
         this.graphRoot = graphRoot;
+    }
+
+    public void showNumberVertex(){
+        JOptionPane.showMessageDialog(boxDrawing,boxDrawing.getGraphView().getVertexesGraph().size());
+    }
+
+    public void showNumberEdge(){
+        JOptionPane.showMessageDialog(boxDrawing,boxDrawing.getAllEdges().getNumberAllEdges());
     }
 
     private int minPath;
@@ -92,7 +108,7 @@ public class GraphView {
                 boxDrawing.setColorBuffer(Color.black);
                 long t0=System.currentTimeMillis();
                 do { }
-                while(System.currentTimeMillis()-t0 < 2000);
+                while(System.currentTimeMillis()-t0 < 20);
 
             }
         }
@@ -123,7 +139,7 @@ public class GraphView {
 
                         long t0 = System.currentTimeMillis();
                         do { }
-                        while(System.currentTimeMillis()-t0 < 2000);
+                        while(System.currentTimeMillis()-t0 < 20);
 
                         dfs(candidate, finish, lengthPath + currentEdge.getEdgeRoot().getWeight());
 

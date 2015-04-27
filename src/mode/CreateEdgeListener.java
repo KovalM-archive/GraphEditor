@@ -34,20 +34,34 @@ public class CreateEdgeListener extends MouseAdapter {
             int y1 = newEdge.getStart().getY() + VertexConst.VERTEX_SIZE_Y / 2;
             int x2 = newEdge.getFinish().getX() + VertexConst.VERTEX_SIZE_X / 2;
             int y2 = newEdge.getFinish().getY() + VertexConst.VERTEX_SIZE_Y / 2;
-            int x = Math.min(x1, x2) + Math.abs(x1 - x2) / 2;
-            int y = Math.min(y1, y2) + Math.abs(y1 - y2) / 2;
 
-            boxDrawing.drawEdge(boxDrawing.getCurrentEdge());
+            int x,y;
+
+            if (x1==x2 && y1==y2){
+                x = x1 + 50;
+                y = y1;
+                boxDrawing.drawLoop(boxDrawing.getCurrentEdge());
+            }else{
+                x = Math.min(x1, x2) + Math.abs(x1 - x2) / 2;
+                y = Math.min(y1, y2) + Math.abs(y1 - y2) / 2;
+                boxDrawing.drawEdge(boxDrawing.getCurrentEdge());
+            }
+
             newEdge.getIdentifier().setBounds(x, y, VertexConst.FONT_SIZE * 4, VertexConst.FONT_SIZE);
             newEdge.getStart().addEdge(boxDrawing.getCurrentEdge());
-            newEdge.getFinish().addEdge(boxDrawing.getCurrentEdge());
+            if (!(x1 == x2 && y1 == y2)){
+                newEdge.getFinish().addEdge(boxDrawing.getCurrentEdge());
+            }
+
             boxDrawing.getAllEdges().addEdges(boxDrawing.getCurrentEdge());
             boxDrawing.add(newEdge.getIdentifier());
 
             EdgeModel newEdgeModel = new EdgeModel(newEdge.getStart().getVertexRoot(),newEdge.getFinish().getVertexRoot());
             newEdge.setEdgeRoot(newEdgeModel);
             newEdge.getStart().getVertexRoot().addEdge(newEdgeModel);
-            newEdge.getFinish().getVertexRoot().addEdge(newEdgeModel);
+            if (!(x1 == x2 && y1 == y2)){
+                newEdge.getFinish().getVertexRoot().addEdge(newEdgeModel);
+            }
 
             boxDrawing.setCurrentEdge(null);
         }

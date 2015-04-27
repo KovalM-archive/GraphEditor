@@ -4,6 +4,7 @@ import graphview.VertexView;
 import graphview.WorkingArea;
 import constants.VertexConst;
 
+import java.awt.Dimension;
 import java.awt.Point;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionListener;
@@ -28,6 +29,14 @@ public class MoveVertexListener implements MouseMotionListener {
             mouseOnBoxDrawing.setLocation(mouseOnBoxDrawing.getX() + 18, mouseOnBoxDrawing.getY() + 12);
             vertex.getIdentifier().setLocation(mouseOnBoxDrawing);
             boxDrawing.drawVertexsEdges(vertex);
+
+            if (boxDrawing.getWidth() - mouseOnBoxDrawing.getX() < 200){
+                boxDrawing.setPreferredSize(new Dimension(boxDrawing.getWidth() + 200,boxDrawing.getHeight()));
+            }
+
+            if (boxDrawing.getHeight() - mouseOnBoxDrawing.getY() < 200){
+                boxDrawing.setPreferredSize(new Dimension(boxDrawing.getWidth(),boxDrawing.getHeight()+200));
+            }
         }
         boxDrawing.repaint();
     }

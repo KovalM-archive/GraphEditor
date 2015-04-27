@@ -49,51 +49,7 @@ public abstract class AlgorithmModeListener implements ActionListener {
         }
 
         if (numberNoSelectedButton == count){
-            int numberPanel = jtpVkladka.getComponentCount();
-            for (int i = 0; i < numberPanel; i++) {
-                WorkingArea currentPanel = (WorkingArea)jtpVkladka.getComponentAt(i);
-
-                int numberLabel = currentPanel.getComponentCount();
-                for (int j = 0; j < numberLabel; j++) {
-                    try {
-                        VertexView currentVertex = (VertexView) currentPanel.getComponent(j);
-
-                        MouseListener currentLabelListeners[] = currentVertex.getMouseListeners();
-
-                        for (MouseListener currentListener : currentLabelListeners) {
-                            currentVertex.removeMouseListener(currentListener);
-                        }
-
-                        currentVertex.addMouseMotionListener(new MoveVertexListener(currentVertex, currentPanel));
-                        currentVertex.addMouseListener(new ClickVertexListener(currentVertex));
-
-                    } catch (Exception error){
-                        System.out.println("No vertex");
-                    }
-                }
-
-                MouseListener currentPanelListeners[] = currentPanel.getMouseListeners();
-
-                for (MouseListener currentListener : currentPanelListeners){
-                    currentPanel.removeMouseListener(currentListener);
-                }
-
-                MouseMotionListener currentPanelMotionListeners[] = currentPanel.getMouseMotionListeners();
-
-                for (MouseMotionListener currentListener : currentPanelMotionListeners){
-                    currentPanel.removeMouseMotionListener(currentListener);
-                }
-
-                currentPanel.addMouseListener(new CreateVertexListener(currentPanel,jtbMain));
-                currentPanel.setCursor(Cursor.getDefaultCursor());
-            }
-
-            currentButton = (JToggleButton) jtbMain.getComponentAtIndex(0);
-            currentButton.setSelected(true);
-            for (int i=0; i<4; i++){
-                currentButton = (JToggleButton) jtbMain.getComponentAtIndex(i);
-                currentButton.setEnabled(true);
-            }
+            returnToWorkWithGraph();
         } else{
             for (int i=0; i<count; i++){
                 currentButton = (JToggleButton) jtbAlgorithm.getComponentAtIndex(i);
@@ -107,6 +63,54 @@ public abstract class AlgorithmModeListener implements ActionListener {
         }
     }
 
+    protected void returnToWorkWithGraph(){
+        JToggleButton currentButton;
+        int numberPanel = jtpVkladka.getComponentCount();
+        for (int i = 0; i < numberPanel; i++) {
+            WorkingArea currentPanel = (WorkingArea)jtpVkladka.getComponentAt(i);
+
+            int numberLabel = currentPanel.getComponentCount();
+            for (int j = 0; j < numberLabel; j++) {
+                try {
+                    VertexView currentVertex = (VertexView) currentPanel.getComponent(j);
+
+                    MouseListener currentLabelListeners[] = currentVertex.getMouseListeners();
+
+                    for (MouseListener currentListener : currentLabelListeners) {
+                        currentVertex.removeMouseListener(currentListener);
+                    }
+
+                    currentVertex.addMouseMotionListener(new MoveVertexListener(currentVertex, currentPanel));
+                    currentVertex.addMouseListener(new ClickVertexListener(currentVertex));
+
+                } catch (Exception error){
+                    System.out.println("No vertex");
+                }
+            }
+
+            MouseListener currentPanelListeners[] = currentPanel.getMouseListeners();
+
+            for (MouseListener currentListener : currentPanelListeners){
+                currentPanel.removeMouseListener(currentListener);
+            }
+
+            MouseMotionListener currentPanelMotionListeners[] = currentPanel.getMouseMotionListeners();
+
+            for (MouseMotionListener currentListener : currentPanelMotionListeners){
+                currentPanel.removeMouseMotionListener(currentListener);
+            }
+
+            currentPanel.addMouseListener(new CreateVertexListener(currentPanel,jtbMain));
+            currentPanel.setCursor(Cursor.getDefaultCursor());
+        }
+
+        currentButton = (JToggleButton) jtbMain.getComponentAtIndex(0);
+        currentButton.setSelected(true);
+        for (int i=0; i<4; i++){
+            currentButton = (JToggleButton) jtbMain.getComponentAtIndex(i);
+            currentButton.setEnabled(true);
+        }
+    }
     protected void changeMode(){
 
     }

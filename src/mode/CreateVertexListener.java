@@ -6,6 +6,7 @@ import graphview.WorkingArea;
 import constants.VertexConst;
 
 import javax.swing.*;
+import java.awt.Dimension;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -39,8 +40,8 @@ public class CreateVertexListener extends MouseAdapter {
                 boxDrawing.add(vertex.getIdentifier());
                 vertex.setBounds(me.getX(), me.getY(), VertexConst.VERTEX_SIZE_X, VertexConst.VERTEX_SIZE_Y);
                 vertex.getIdentifier().setBounds(me.getX() + VertexConst.VERTEX_SIZE_X,
-                            me.getY() + VertexConst.VERTEX_SIZE_Y - 4,
-                            VertexConst.FONT_SIZE * nameVertex.length(), VertexConst.FONT_SIZE);
+                        me.getY() + VertexConst.VERTEX_SIZE_Y - 4,
+                        VertexConst.FONT_SIZE * nameVertex.length(), VertexConst.FONT_SIZE);
 
                 boxDrawing.repaint();
             } catch (Exception error) {

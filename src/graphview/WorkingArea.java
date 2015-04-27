@@ -37,7 +37,30 @@ public class WorkingArea extends JPanel {
         this.currentEdge = currentEdge;
     }
 
-    public void drawEdge(EdgeView currentEdge){
+    public void drawLoop(EdgeView current){
+        Graphics pain = buffer.getGraphics();
+        Graphics2D painter = (Graphics2D)pain;
+        int x1,x2,x3,y1,y2,y3;
+
+        painter.setStroke(new BasicStroke(4));
+        painter.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+        painter.setBackground(new Color(255,255,255,0));
+        painter.setColor(colorOfLine);
+
+        x1 = current.getStart().getX() + VertexConst.VERTEX_SIZE_X / 2;
+        y1 = current.getStart().getY() + VertexConst.VERTEX_SIZE_Y / 2;
+        x2 = current.getFinish().getX() + VertexConst.VERTEX_SIZE_X / 2 + 50;
+        y2 = current.getFinish().getY() + VertexConst.VERTEX_SIZE_Y / 2 - 25;
+        x3 = current.getFinish().getX() + VertexConst.VERTEX_SIZE_X / 2 + 50;
+        y3 = current.getFinish().getY() + VertexConst.VERTEX_SIZE_Y / 2 + 25;
+        painter.drawLine(x1,y1,x2,y2);
+        painter.drawLine(x2,y2,x3,y3);
+        painter.drawLine(x1,y1,x3,y3);
+        drawTip(painter,x2,y2,x1,y1);
+        repaint();
+    }
+
+    public void drawEdge(EdgeView current){
         Graphics pain = buffer.getGraphics();
         Graphics2D painter = (Graphics2D)pain;
         int x1,x2,y1,y2;
@@ -47,10 +70,10 @@ public class WorkingArea extends JPanel {
         painter.setBackground(new Color(255,255,255,0));
         painter.setColor(colorOfLine);
 
-        x1 = currentEdge.getStart().getX() + VertexConst.VERTEX_SIZE_X / 2;
-        y1 = currentEdge.getStart().getY() + VertexConst.VERTEX_SIZE_Y / 2;
-        x2 = currentEdge.getFinish().getX() + VertexConst.VERTEX_SIZE_X / 2;
-        y2 = currentEdge.getFinish().getY() + VertexConst.VERTEX_SIZE_Y / 2;
+        x1 = current.getStart().getX() + VertexConst.VERTEX_SIZE_X / 2;
+        y1 = current.getStart().getY() + VertexConst.VERTEX_SIZE_Y / 2;
+        x2 = current.getFinish().getX() + VertexConst.VERTEX_SIZE_X / 2;
+        y2 = current.getFinish().getY() + VertexConst.VERTEX_SIZE_Y / 2;
         painter.drawLine(x1,y1,x2,y2);
         drawTip(painter,x1,y1,x2,y2);
         repaint();
@@ -62,11 +85,11 @@ public class WorkingArea extends JPanel {
 
         painter.setStroke(new BasicStroke(4));
         painter.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-        painter.setBackground(new Color(255,255,255,0));
+        painter.setBackground(new Color(255, 255, 255, 0));
         painter.setColor(Color.black);
         painter.clearRect(0, 0, 1500, 1500);
-        painter.drawLine(x1,y1,x2,y2);
-        drawTip(painter,x1,y1,x2,y2);
+        painter.drawLine(x1, y1, x2, y2);
+        drawTip(painter, x1, y1, x2, y2);
         repaint();
     }
 
@@ -82,47 +105,86 @@ public class WorkingArea extends JPanel {
         painter.clearRect(0, 0, 1500, 1500);
 
         int n = vertex.getNumberEdges();
-        EdgeView currentEdge;
+        EdgeView current;
         int x1 = vertex.getX() + VertexConst.VERTEX_SIZE_X / 2;
         int y1 = vertex.getY() + VertexConst.VERTEX_SIZE_Y / 2;
         int x2,y2;
 
         for (int i = 0; i<n; i++){
-            currentEdge = vertex.getEdgesAtIndex(i);
-            if (currentEdge.getStart().equals(vertex)){
-                x2 = currentEdge.getFinish().getX() + VertexConst.VERTEX_SIZE_X / 2;
-                y2 = currentEdge.getFinish().getY() + VertexConst.VERTEX_SIZE_Y / 2;
-                painter.drawLine(x1, y1, x2, y2);
-                drawTip(painter,x1,y1,x2,y2);
+            current = vertex.getEdgesAtIndex(i);
+            if (current.getStart().equals(vertex)){
+                x2 = current.getFinish().getX() + VertexConst.VERTEX_SIZE_X / 2;
+                y2 = current.getFinish().getY() + VertexConst.VERTEX_SIZE_Y / 2;
+                if (x1 == x2 && y1 == y2){
+                    x2 = current.getFinish().getX() + VertexConst.VERTEX_SIZE_X / 2 + 50;
+                    y2 = current.getFinish().getY() + VertexConst.VERTEX_SIZE_Y / 2 - 25;
+                    int x3 = current.getFinish().getX() + VertexConst.VERTEX_SIZE_X / 2 + 50;
+                    int y3 = current.getFinish().getY() + VertexConst.VERTEX_SIZE_Y / 2 + 25;
+                    painter.drawLine(x1,y1,x2,y2);
+                    painter.drawLine(x2,y2,x3,y3);
+                    painter.drawLine(x1,y1,x3,y3);
+                    drawTip(painter,x2,y2,x1,y1);
+                    current.getIdentifier().setBounds(x1 + 50, y1, VertexConst.FONT_SIZE * 4, VertexConst.FONT_SIZE);
+                }else{
+                    painter.drawLine(x1, y1, x2, y2);
+                    drawTip(painter,x1,y1,x2,y2);
+                    int x = Math.min(x1,x2) + Math.abs(x1-x2) / 2;
+                    int y = Math.min(y1, y2) + Math.abs(y1 - y2) / 2;
+                    current.getIdentifier().setBounds(x, y, VertexConst.FONT_SIZE * 4, VertexConst.FONT_SIZE);
+                }
             } else {
-                x2 = currentEdge.getStart().getX() + VertexConst.VERTEX_SIZE_X / 2;
-                y2 = currentEdge.getStart().getY() + VertexConst.VERTEX_SIZE_Y / 2;
-                painter.drawLine(x1, y1, x2, y2);
-                drawTip(painter,x2,y2,x1,y1);
+                x2 = current.getStart().getX() + VertexConst.VERTEX_SIZE_X / 2;
+                y2 = current.getStart().getY() + VertexConst.VERTEX_SIZE_Y / 2;
+                if (x1 == x2 && y1 == y2){
+                    x2 = current.getFinish().getX() + VertexConst.VERTEX_SIZE_X / 2 + 50;
+                    y2 = current.getFinish().getY() + VertexConst.VERTEX_SIZE_Y / 2 - 25;
+                    int x3 = current.getFinish().getX() + VertexConst.VERTEX_SIZE_X / 2 + 50;
+                    int y3 = current.getFinish().getY() + VertexConst.VERTEX_SIZE_Y / 2 + 25;
+                    painter.drawLine(x1,y1,x2,y2);
+                    painter.drawLine(x2,y2,x3,y3);
+                    painter.drawLine(x1,y1,x3,y3);
+                    drawTip(painter,x2,y2,x1,y1);
+
+                    current.getIdentifier().setBounds(x1 + 50, y1, VertexConst.FONT_SIZE * 4, VertexConst.FONT_SIZE);
+                }else{
+                    painter.drawLine(x2, y2, x1, y1);
+                    drawTip(painter,x2,y2,x1,y1);
+                    int x = Math.min(x1,x2) + Math.abs(x1-x2) / 2;
+                    int y = Math.min(y1, y2) + Math.abs(y1 - y2) / 2;
+                    current.getIdentifier().setBounds(x, y, VertexConst.FONT_SIZE * 4, VertexConst.FONT_SIZE);
+                }
             }
-
-            int x = Math.min(x1,x2) + Math.abs(x1-x2) / 2;
-            int y = Math.min(y1,y2) + Math.abs(y1-y2) / 2;
-
-            currentEdge.getIdentifier().setBounds(x, y, VertexConst.FONT_SIZE * 4, VertexConst.FONT_SIZE);
         }
 
         n = allEdges.getNumberAllEdges();
 
         for (int i = 0; i<n; i++){
-            currentEdge = allEdges.getEdgesAtIndex(i);
-            if (!currentEdge.getStart().equals(vertex) && !currentEdge.getFinish().equals(vertex)){
-                x1 = currentEdge.getStart().getX() + VertexConst.VERTEX_SIZE_X / 2;
-                y1 = currentEdge.getStart().getY() + VertexConst.VERTEX_SIZE_Y / 2;
-                x2 = currentEdge.getFinish().getX() + VertexConst.VERTEX_SIZE_X / 2;
-                y2 = currentEdge.getFinish().getY() + VertexConst.VERTEX_SIZE_Y / 2;
+            current = allEdges.getEdgesAtIndex(i);
+            if (!current.getStart().equals(vertex) && !current.getFinish().equals(vertex)){
+                x1 = current.getStart().getX() + VertexConst.VERTEX_SIZE_X / 2;
+                y1 = current.getStart().getY() + VertexConst.VERTEX_SIZE_Y / 2;
+                x2 = current.getFinish().getX() + VertexConst.VERTEX_SIZE_X / 2;
+                y2 = current.getFinish().getY() + VertexConst.VERTEX_SIZE_Y / 2;
 
-                int x = Math.min(x1,x2) + Math.abs(x1-x2) / 2;
-                int y = Math.min(y1,y2) + Math.abs(y1-y2) / 2;
+                if (x1 == x2 && y1 == y2){
+                    x2 = current.getFinish().getX() + VertexConst.VERTEX_SIZE_X / 2 + 50;
+                    y2 = current.getFinish().getY() + VertexConst.VERTEX_SIZE_Y / 2 - 25;
+                    int x3 = current.getFinish().getX() + VertexConst.VERTEX_SIZE_X / 2 + 50;
+                    int y3 = current.getFinish().getY() + VertexConst.VERTEX_SIZE_Y / 2 + 25;
+                    painter.drawLine(x1,y1,x2,y2);
+                    painter.drawLine(x2,y2,x3,y3);
+                    painter.drawLine(x1,y1,x3,y3);
+                    drawTip(painter,x2,y2,x1,y1);
 
-                currentEdge.getIdentifier().setBounds(x, y, VertexConst.FONT_SIZE * 4, VertexConst.FONT_SIZE);
-                painter.drawLine(x1,y1,x2,y2);
-                drawTip(painter,x1,y1,x2,y2);
+                    current.getIdentifier().setBounds(x1 + 50, y1, VertexConst.FONT_SIZE * 4, VertexConst.FONT_SIZE);
+                }else{
+                    int x = Math.min(x1,x2) + Math.abs(x1-x2) / 2;
+                    int y = Math.min(y1,y2) + Math.abs(y1-y2) / 2;
+
+                    current.getIdentifier().setBounds(x, y, VertexConst.FONT_SIZE * 4, VertexConst.FONT_SIZE);
+                    painter.drawLine(x1,y1,x2,y2);
+                    drawTip(painter,x1,y1,x2,y2);
+                }
             }
         }
         repaint();
@@ -138,23 +200,36 @@ public class WorkingArea extends JPanel {
         painter.setColor(Color.black);
         painter.clearRect(0, 0, 1500, 1500);
 
-        EdgeView currentEdge;
+        EdgeView current;
         int x1,y1,x2,y2;
         int n = allEdges.getNumberAllEdges();
 
         for (int i = 0; i<n; i++){
-            currentEdge = allEdges.getEdgesAtIndex(i);
-            x1 = currentEdge.getStart().getX() + VertexConst.VERTEX_SIZE_X / 2;
-            y1 = currentEdge.getStart().getY() + VertexConst.VERTEX_SIZE_Y / 2;
-            x2 = currentEdge.getFinish().getX() + VertexConst.VERTEX_SIZE_X / 2;
-            y2 = currentEdge.getFinish().getY() + VertexConst.VERTEX_SIZE_Y / 2;
+            current = allEdges.getEdgesAtIndex(i);
+            x1 = current.getStart().getX() + VertexConst.VERTEX_SIZE_X / 2;
+            y1 = current.getStart().getY() + VertexConst.VERTEX_SIZE_Y / 2;
+            x2 = current.getFinish().getX() + VertexConst.VERTEX_SIZE_X / 2;
+            y2 = current.getFinish().getY() + VertexConst.VERTEX_SIZE_Y / 2;
 
-            int x = Math.min(x1,x2) + Math.abs(x1-x2) / 2;
-            int y = Math.min(y1,y2) + Math.abs(y1-y2) / 2;
+            if (x1 == x2 && y1 == y2){
+                x2 = current.getFinish().getX() + VertexConst.VERTEX_SIZE_X / 2 + 50;
+                y2 = current.getFinish().getY() + VertexConst.VERTEX_SIZE_Y / 2 - 25;
+                int x3 = current.getFinish().getX() + VertexConst.VERTEX_SIZE_X / 2 + 50;
+                int y3 = current.getFinish().getY() + VertexConst.VERTEX_SIZE_Y / 2 + 25;
+                painter.drawLine(x1,y1,x2,y2);
+                painter.drawLine(x2,y2,x3,y3);
+                painter.drawLine(x1,y1,x3,y3);
+                drawTip(painter,x2,y2,x1,y1);
 
-            currentEdge.getIdentifier().setBounds(x, y, VertexConst.FONT_SIZE * 4, VertexConst.FONT_SIZE);
-            painter.drawLine(x1,y1,x2,y2);
-            drawTip(painter,x1,y1,x2,y2);
+                current.getIdentifier().setBounds(x1 + 50, y1, VertexConst.FONT_SIZE * 4, VertexConst.FONT_SIZE);
+            }else{
+                int x = Math.min(x1,x2) + Math.abs(x1-x2) / 2;
+                int y = Math.min(y1,y2) + Math.abs(y1-y2) / 2;
+
+                current.getIdentifier().setBounds(x, y, VertexConst.FONT_SIZE * 4, VertexConst.FONT_SIZE);
+                painter.drawLine(x1,y1,x2,y2);
+                drawTip(painter,x1,y1,x2,y2);
+            }
         }
         repaint();
     }
