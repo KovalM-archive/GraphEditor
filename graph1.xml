@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<graph>
+<vertexs>
+<vertex alignmentX="96" alignmentY="63" nameVertex=""/>
+<vertex alignmentX="88" alignmentY="186" nameVertex=""/>
+<vertex alignmentX="141" alignmentY="227" nameVertex=""/>
+<vertex alignmentX="223" alignmentY="232" nameVertex=""/>
+<vertex alignmentX="290" alignmentY="184" nameVertex=""/>
+<vertex alignmentX="253" alignmentY="79" nameVertex=""/>
+</vertexs>
+<edges>
+<edge finishAlignmentX="88" finishAlignmentY="186" nameEdge="" startAlignmentX="96" startAlignmentY="63"/>
+<edge finishAlignmentX="141" finishAlignmentY="227" nameEdge="" startAlignmentX="88" startAlignmentY="186"/>
+<edge finishAlignmentX="223" finishAlignmentY="232" nameEdge="" startAlignmentX="141" startAlignmentY="227"/>
+<edge finishAlignmentX="253" finishAlignmentY="79" nameEdge="" startAlignmentX="223" startAlignmentY="232"/>
+<edge finishAlignmentX="290" finishAlignmentY="184" nameEdge="" startAlignmentX="223" startAlignmentY="232"/>
+<edge finishAlignmentX="253" finishAlignmentY="79" nameEdge="" startAlignmentX="290" startAlignmentY="184"/>
+<edge finishAlignmentX="253" finishAlignmentY="79" nameEdge="" startAlignmentX="88" startAlignmentY="186"/>
+<edge finishAlignmentX="253" finishAlignmentY="79" nameEdge="" startAlignmentX="141" startAlignmentY="227"/>
+<edge finishAlignmentX="253" finishAlignmentY="79" nameEdge="" startAlignmentX="96" startAlignmentY="63"/>
+</edges>
+</graph>

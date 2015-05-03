@@ -144,11 +144,13 @@ public class ChangeEdgeName implements MouseMotionListener,MouseListener {
 
         if (min < 0.4) {
             boxDrawing.setColorBuffer(Color.green);
+
             if (farEdge.getStart().equals(farEdge.getFinish())) {
                 boxDrawing.drawLoop(farEdge);
             }else{
                 boxDrawing.drawEdge(farEdge);
             }
+
             boxDrawing.setGreenEdge(farEdge);
             boxDrawing.setColorBuffer(Color.black);
         } else {

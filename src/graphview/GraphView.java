@@ -2,14 +2,15 @@ package graphview;
 
 import graph.GraphModel;
 
+import javax.management.monitor.Monitor;
 import javax.swing.JOptionPane;
 import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GraphView {
+public class GraphView implements Runnable{
     private GraphModel graphRoot;
-
+    private Thread thread;
     public List<VertexView> getVertexesGraph() {
         return vertexesGraph;
     }
@@ -27,6 +28,7 @@ public class GraphView {
         graphRoot = new GraphModel();
         vertexesGraph = new ArrayList<VertexView>();
         start = null;
+        thread = new Thread(this);
     }
 
     public void addVertex(VertexView newVertex){
@@ -56,27 +58,13 @@ public class GraphView {
     private int minPath;
     private EdgesList answerPath;
     private EdgesList currentPath;
+    private VertexView startAlg;
+    private VertexView finishAlg;
 
     public void showMinPath(VertexView start,VertexView finish){
-        answerPath = null;
-        currentPath = new EdgesList();
-        minPath = 99999999;
-        boxDrawing.setDoubleBuffered(false);
-        dfs(start,finish,0);
-        boxDrawing.setDoubleBuffered(true);
-        if (minPath == 99999999){
-            JOptionPane.showMessageDialog(boxDrawing,"Minimum path does not exist");
-        } else{
-            JOptionPane.showMessageDialog(boxDrawing,minPath);
-        }
-
-        if (null != answerPath) {
-            int count = answerPath.getNumberAllEdges();
-            boxDrawing.setColorBuffer(Color.black);
-            for (int i = 0; i < count; i++) {
-                boxDrawing.drawEdge(answerPath.getEdgesAtIndex(i));
-            }
-        }
+        startAlg = start;
+        finishAlg = finish;
+        thread.start();
     }
 
     private void dfs(VertexView currentVertex,VertexView finish,int lengthPath){
@@ -105,11 +93,12 @@ public class GraphView {
                 for (int i = 0; i < count; i++) {
                     boxDrawing.drawEdge(answerPath.getEdgesAtIndex(i));
                 }
+                try {
+                    Thread.sleep(1000);
+                }catch (InterruptedException e){
+                    e.printStackTrace();
+                }
                 boxDrawing.setColorBuffer(Color.black);
-                long t0=System.currentTimeMillis();
-                do { }
-                while(System.currentTimeMillis()-t0 < 20);
-
             }
         }
         else{
@@ -131,15 +120,15 @@ public class GraphView {
                     }
                     if (!flag){
                         currentPath.addEdges(currentEdge);
-
                         System.out.println("draw in yellow");
                         boxDrawing.setColorBuffer(Color.yellow);
                         boxDrawing.drawEdge(currentEdge);
                         boxDrawing.setColorBuffer(Color.black);
-
-                        long t0 = System.currentTimeMillis();
-                        do { }
-                        while(System.currentTimeMillis()-t0 < 20);
+                        try {
+                            Thread.sleep(1000);
+                        }catch (InterruptedException e){
+                            e.printStackTrace();
+                        }
 
                         dfs(candidate, finish, lengthPath + currentEdge.getEdgeRoot().getWeight());
 
@@ -172,5 +161,30 @@ public class GraphView {
 
     public void setStart(VertexView start) {
         this.start = start;
+    }
+
+    @Override
+    public void run() {
+        answerPath = null;
+        currentPath = new EdgesList();
+        minPath = 99999999;
+        boxDrawing.setDoubleBuffered(false);
+
+        dfs(startAlg,finishAlg,0);
+
+        boxDrawing.setDoubleBuffered(true);
+        if (minPath == 99999999){
+            JOptionPane.showMessageDialog(boxDrawing,"Minimum path does not exist");
+        } else{
+            JOptionPane.showMessageDialog(boxDrawing,minPath);
+        }
+
+        if (null != answerPath) {
+            int count = answerPath.getNumberAllEdges();
+            boxDrawing.setColorBuffer(Color.black);
+            for (int i = 0; i < count; i++) {
+                boxDrawing.drawEdge(answerPath.getEdgesAtIndex(i));
+            }
+        }
     }
 }

@@ -23,6 +23,8 @@ public class ClickVertexSFListener extends MouseAdapter {
             boxDrawing.getGraphView().setStart(vertex);
         } else {
             boxDrawing.getGraphView().showMinPath(boxDrawing.getGraphView().getStart(), vertex);
+            boxDrawing.getGraphView().getStart().setIcon(VertexConst.GREY_VERTEX_IMAGE);
+            boxDrawing.getGraphView().getStart().updateUI();
             boxDrawing.getGraphView().setStart(null);
         }
     }
